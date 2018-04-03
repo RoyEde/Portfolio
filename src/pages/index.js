@@ -36,8 +36,9 @@ const LinkS = ({blank, link, text}) => (
   </a>
 )
 
-const IndexPage = () => (
+const IndexPage = ({...props}) => (
   <div>
+    {console.log(props.mobile)}
     <h1 className='title-font'>
       Hi
       <HighlightP text='people!' />
@@ -73,27 +74,65 @@ const IndexPage = () => (
             text='freeCodeCamp'
           />
           events in
-          <HighlightP text='Buenos Aires' />
+          <HighlightP text='Buenos' />
+          <HighlightS text='Aires' />
           as a part of the
           <LinkP
             blank={true}
             link='https://freecodecampba.org'
             text='freeCodeCampBA'
           />
-          communnity.
+          community.
+        </p>
+        <p className='paragraph-font'>
+          You can
+          <HighlightP text='read' />
+          a bit
+          <HighlightS text='more' />
+          about
+          <HighlightP text='me' />
+          in the
+          <Link
+            className='highlight secondary'
+            to='/about/'
+          >
+            {' about '}
+          </Link>
+          section.
         </p>
       </article>
-    </section>
-    <section className='tools'>
       <img
         alt='Tools'
         className='tools-icon'
         // src={icon}
       />
-      <article className='info'>
+      <article className='tools'>
         <p className='paragraph-font'>
-          The tools I work with:
+          Some of the tools I've worked with:
         </p>
+        <ul className='skills'>
+          <li className='paragraph-font'>
+            <HighlightP text='React.js' />
+          </li>
+          <li className='paragraph-font'>
+            <HighlightS text='Express' />
+          </li>
+          <li className='paragraph-font'>
+            <HighlightP text='JQuery' />
+          </li>
+          <li className='paragraph-font'>
+            <HighlightS text='JavaScript' />
+          </li>
+          <li className='paragraph-font'>
+            <HighlightP text='HTML' />
+          </li>
+          <li className='paragraph-font'>
+            <HighlightS text='CSS' />
+          </li>
+          <li className='paragraph-font'>
+            <HighlightP text='Git' />
+          </li>
+        </ul>
       </article>
     </section>
   </div>

@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans');
 
-html {
-  height: 3000px;
-}
-
 .title-font {
   font-family: 'Merriweather', sans-serif;
   font-size: 2rem;
@@ -185,7 +181,7 @@ html {
   margin-right: 1.5vw;
   padding-left: 1.5vw;
   padding-right: 1.5vw;
-  transition: border .15s, color .6s;
+  transition: border .15s, color .3s;
 }
 
 .page.mobile {
@@ -214,15 +210,13 @@ html {
   align-items: center;
 }
 
-.info {
-  margin-top: 1rem;
-}
-
-.main-icon {
+.main-icon, .tools-icon {
   border-radius: 6rem;
   border-style: solid;
   border-width: .2rem;
   height: 11rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   padding: auto;
   transition: border .1s, transform .2s;
   width: 11rem;
@@ -230,6 +224,18 @@ html {
 
 .main-icon {
   border-color: #db995a;
+}
+
+ .tools-icon {
+   border-color: #db3069;
+ }
+
+.info, .tools {
+  width: 80%;
+}
+
+.skills {
+  list-style-position: inside;
 }
 
 /*Adapted from https://css-tricks.com/snippets/css/shake-css-keyframe-animation/*/
@@ -254,7 +260,7 @@ html {
     animation: shake 1.2s cubic-bezier(.36, .07, .19, .97) infinite backwards;
   }
 
-  .main-icon:hover {
+  .main-icon:hover, .tools-icon:hover {
     border-style: dashed;
     border-width: .3rem;
     transform: scale(1.05);

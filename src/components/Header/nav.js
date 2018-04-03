@@ -2,8 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-const navigation = ['Home', 'Projects', 'About', 'Contact']
-
 const NavLink = ({changePage, mobile, selected, where}) => (
   <Link
     className={`page ${mobile ? 'mobile' : 'common'} ${selected ? 'selected' : ''}`}
@@ -14,10 +12,10 @@ const NavLink = ({changePage, mobile, selected, where}) => (
   </Link>
 )
 
-const NavMenu = ({changePage, mobile, page, status}) => (
+const NavMenu = ({changePage, mobile, page, pages, status}) => (
   <menu className={`menu ${mobile ? `mobile ${status ? 'open' : ''}` : 'common'}`}>
     {
-      navigation.map((v, i) =>
+      pages.map((v, i) =>
         <NavLink
           changePage={() => changePage(i)}
           key={v}
@@ -30,7 +28,7 @@ const NavMenu = ({changePage, mobile, page, status}) => (
   </menu>
 )
 
-const Nav = ({changePage, mobile, page, status}) => (
+const Nav = ({changePage, mobile, page, pages, status}) => (
   <nav
     className={`nav ${mobile ? 'mobile' : 'common'}`}
   >
@@ -38,6 +36,7 @@ const Nav = ({changePage, mobile, page, status}) => (
       changePage={(v) => changePage(v)}
       mobile={mobile}
       page={page}
+      pages={pages}
       status={status}
     />
   </nav>
