@@ -9,29 +9,49 @@ class Header extends Component {
     super()
 
     this.state = {
+      menuOpen: false,
       mobile: false,
-      menuOpen: null,
-      page: 0
+      page: 0,
+      pageHeight: 0,
+      progress: 0
     }
   }
 
   componentWillMount () {
-    this.setState({menuOpen: null})
     window.addEventListener('resize', () => this.resize())
+    window.addEventListener('scroll', () => this.checkProgress())
     this.resize()
   }
 
+  componentDidMount () {
+    this.setState({pageHeight: document.body.scrollHeight - window.innerHeight})
+  }
+
+  changePage (v) {
+    this.setState({
+      page: v,
+      pageHeight: 1000
+    })
+    // this.handleMenu(false)
+  }
+
+  checkProgress () {
+    this.setState({
+      pageHeight: document.body.scrollHeight - window.innerHeight,
+      progress: window.scrollY
+    })
+  }
+
   resize () {
-    this.setState({mobile: window.innerWidth <= 768})
+    const landscape = window.innerWidth <= 768
+    this.setState({
+      mobile: landscape,
+      menuOpen: landscape ? this.state.menuOpen : false
+    })
   }
 
   handleMenu (open) {
     this.setState({menuOpen: open})
-  }
-
-  changePage (v) {
-    this.setState({page: v})
-    // this.handleMenu(false)
   }
 
   render () {
@@ -40,7 +60,12 @@ class Header extends Component {
     const page = this.state.page
     return (
       <header className='header'>
-        <div className='header-bar'>
+        <progress
+          className={`read-progress ${mobile ? 'mobile' : 'common'}`}
+          max={this.state.pageHeight}
+          value={this.state.progress}
+        />
+        <div className={`header-bar ${mobile ? 'mobile' : 'mobile'}`}>
           <Link
             to='/'
           >

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default ({handleClick, open, status}) => (
   <button
-    className={`menu-button ${status !== null ? (status ? 'open' : 'closed') : 'closed'}`}
+    className={`menu-button ${status ? 'open' : 'closed'}`}
     onClick={handleClick}
   >
     <b>{`${open ? 'X' : '≡'}`}</b>

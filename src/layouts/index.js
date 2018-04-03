@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
+// import Footer from '../components/Footer'
 import favicon from '../img/favicon.png'
 
 import './index.css'
 import './styles.css'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <main>
     <Helmet
       title='Roy Eden -Front End Dev-'
       meta={[
@@ -23,7 +24,8 @@ const TemplateWrapper = ({ children }) => (
     <div className='layout'>
       {children()}
     </div>
-  </div>
+    {/* <Footer /> */}
+  </main>
 )
 
 TemplateWrapper.propTypes = {

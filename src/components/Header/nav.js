@@ -6,7 +6,7 @@ const navigation = ['Home', 'Projects', 'About', 'Contact']
 
 const NavLink = ({changePage, mobile, selected, where}) => (
   <Link
-    className={`page-link ${mobile ? 'mobile-page' : 'page'}`}
+    className={`page ${mobile ? 'mobile' : 'common'} ${selected ? 'selected' : ''}`}
     onClick={changePage}
     to={`/${where !== 'Home' ? where.toLowerCase() : ''}`}
   >
@@ -15,7 +15,7 @@ const NavLink = ({changePage, mobile, selected, where}) => (
 )
 
 const NavMenu = ({changePage, mobile, page, status}) => (
-  <menu className={`menu ${mobile ? `mobile-menu ${status !== null ? (status ? 'open' : 'closed') : ''}` : 'common-menu'}`}>
+  <menu className={`menu ${mobile ? `mobile ${status ? 'open' : ''}` : 'common'}`}>
     {
       navigation.map((v, i) =>
         <NavLink
@@ -32,7 +32,7 @@ const NavMenu = ({changePage, mobile, page, status}) => (
 
 const Nav = ({changePage, mobile, page, status}) => (
   <nav
-    className={`nav ${mobile ? 'mobile-nav' : 'common-nav'}`}
+    className={`nav ${mobile ? 'mobile' : 'common'}`}
   >
     <NavMenu
       changePage={(v) => changePage(v)}
