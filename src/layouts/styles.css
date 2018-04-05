@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans');
 
+a {
+  text-decoration: none;
+}
+
+article {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+
 .title-font {
   font-family: 'Merriweather', sans-serif;
   font-size: 2rem;
@@ -7,7 +24,7 @@
 
 .subtitle-font {
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .paragraph-font {
@@ -20,6 +37,10 @@
   font-style: italic;
 }
 
+.highlight {
+  transition: color 1.5s;
+}
+
 .highlight.primary {
   color: #db995a;
 }
@@ -29,10 +50,13 @@
 }
 
 .layout {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   margin: 0 auto;
-  max-width: 80vw;
-  padding: 0px 1.0875rem 1.45rem;
+  max-width: 82vw;
   padding-top: 4rem;
+  z-index: 1;
 }
 
 .header {
@@ -49,7 +73,15 @@
   border: none;
   height: .4rem;
   width: 100vw;
-  z-index: 3;
+  z-index: 4;
+}
+
+.read-progress::-webkit-progress-bar {
+  background: #342e37;
+}
+
+.read-progress::-webkit-progress-value {
+  border-radius: 1px;
 }
 
 .read-progress.common::-webkit-progress-value {
@@ -73,13 +105,12 @@
 }
 
 .header-bar.common {
-  box-shadow: 0px 4rem .4rem #000000;
+  /*box-shadow: 1rem 4rem 0rem #000000;*/
 }
 
 .logo {
-  float: left;
-  height: 3rem;
-  width: 3rem;
+  height: 2.9rem;
+  width: 2.9rem;
 }
 
 .button-container {
@@ -158,20 +189,19 @@
 .menu.mobile {
   background-color: #fefefeef;
   flex-direction: column;
-  transform: translate(0, -110vh);
+  transform: translateY(-110vh);
   transform-origin: top;
   transition: transform .75s ease;
 }
 
 .menu.mobile.open {
   height: auto;
-  transform: translate(0, 0);
+  transform: translateY(0);
 }
 
 .page {
   font-size: 1.2rem;
   text-align: center;
-  text-decoration: none;
   font-family: 'Merriweather Sans', sans-serif;
 }
 
@@ -205,69 +235,128 @@
 }
 
 .presentation {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.main-icon, .tools-icon {
-  border-radius: 6rem;
+
+.introduction {
+  margin-top: 2rem;
+}
+
+.link.img {
+  align-items: center;
+  display: flex;
+  height: 13rem;
+  justify-content: center;
+  width: 13rem;
+}
+
+.icon {
+  border-radius: 100%;
   border-style: solid;
   border-width: .2rem;
   height: 11rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
   padding: auto;
-  transition: border .1s, transform .2s;
+  transition: border .3s, height .4s, margin.4s, width .4s;
   width: 11rem;
 }
 
-.main-icon {
+.icon.common {
   border-color: #db995a;
 }
 
- .tools-icon {
-   border-color: #db3069;
- }
+.icon.mobile {
+  border-color: #db3069;
+  border-style: dashed;
+  border-width: .3rem;
+}
 
-.info, .tools {
-  width: 80%;
+.description {
+  margin-top: 1rem;
+}
+
+.custom-link {
+  border-bottom: .1rem solid;
+  transition: border 1.5s;
+}
+
+.custom-link.common {
+  border-color: #db995a;
+}
+
+.custom-link.mobile {
+  border-color: #db3069;
 }
 
 .skills {
   list-style-position: inside;
 }
 
-/*Adapted from https://css-tricks.com/snippets/css/shake-css-keyframe-animation/*/
-@keyframes shake {
-  10%, 90% {
-    transform: translate(-1px, 0) rotate(10deg);
-  }
-  20%, 80% {
-    transform: translate(1px, 0) rotate(-10deg);
-  }
-  30%, 50%, 70% {
-    transform: translate(-2px, 0) rotate(10deg);
-  }
-  40%, 60% {
-    transform: translate(2px, 0) rotate(-10deg);
+.not-found {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/*@media screen and (max-width: 769px) {
+
+}*/
+
+@media screen and (min-width: 1070px) {
+  .page-container {
+    max-width: 55vw;
   }
 }
 
 /*add hover effect here*/
 @media screen and (min-width: 768px) {
+  /*Adapted from https://css-tricks.com/snippets/css/shake-css-keyframe-animation/*/
+  @keyframes shake {
+    10%, 90% {
+      transform: translateX(-1px) rotate(10deg);
+    }
+    20%, 80% {
+      transform: translateX(1px) rotate(-10deg);
+    }
+    30%, 50%, 70% {
+      transform: translateX(-2px) rotate(10deg);
+    }
+    40%, 60% {
+      transform: translateX(2px) rotate(-10deg);
+    }
+  }
+
   .logo:hover {
     animation: shake 1.2s cubic-bezier(.36, .07, .19, .97) infinite backwards;
   }
 
-  .main-icon:hover, .tools-icon:hover {
+  .icon:hover {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     border-style: dashed;
     border-width: .3rem;
-    transform: scale(1.05);
+    height: 13rem;
+    width: 13rem;
+    z-index: 1;
   }
 
   .page.common:hover {
     border-bottom: .1rem solid #db995a;
     color: #db995a;
+  }
+
+  .layout {
+    max-width: 70vw;
+  }
+
+  .highlight.primary:hover {
+    color: #db3069;
+  }
+
+  .custom-link.common:hover {
+    border-color: #db3069;
   }
 }

@@ -1,42 +1,39 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { CustomPage } from '../General'
 import PropTypes from 'prop-types'
 
-const NavLink = ({changePage, mobile, selected, where}) => (
-  <Link
-    className={`page ${mobile ? 'mobile' : 'common'} ${selected ? 'selected' : ''}`}
-    onClick={changePage}
-    to={`/${where !== 'Home' ? where.toLowerCase() : ''}`}
-  >
-    {where}
-  </Link>
+const pages = ['Home', 'Projects', 'About', 'Contact']
+
+const NavLink = ({mobile, selected, where}) => (
+  <CustomPage
+    content={where}
+    customClass={`page ${mobile ? 'mobile' : 'common'} ${selected ? 'selected' : ''}`}
+    page={where}
+  />
 )
 
-const NavMenu = ({changePage, mobile, page, pages, status}) => (
+const NavMenu = ({mobile, page, status}) => (
   <menu className={`menu ${mobile ? `mobile ${status ? 'open' : ''}` : 'common'}`}>
     {
-      pages.map((v, i) =>
+      pages.map(name =>
         <NavLink
-          changePage={() => changePage(i)}
-          key={v}
+          key={name}
           mobile={mobile}
-          selected={page === i}
-          where={v}
+          selected={page === name}
+          where={name}
         />
       )
     }
   </menu>
 )
 
-const Nav = ({changePage, mobile, page, pages, status}) => (
+const Nav = ({mobile, page, status}) => (
   <nav
-    className={`nav ${mobile ? 'mobile' : 'common'}`}
+    className={`nav ${mobile ? `mobile ${status ? 'open' : ''}` : 'common'}`}
   >
     <NavMenu
-      changePage={(v) => changePage(v)}
       mobile={mobile}
       page={page}
-      pages={pages}
       status={status}
     />
   </nav>

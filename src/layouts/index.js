@@ -8,8 +8,6 @@ import favicon from '../img/favicon.png'
 import './index.css'
 import './styles.css'
 
-const pages = ['Home', 'Projects', 'About', 'Contact']
-
 class TemplateWrapper extends React.Component {
   constructor () {
     super()
@@ -17,28 +15,29 @@ class TemplateWrapper extends React.Component {
     this.state = {
       menuOpen: false,
       mobile: false,
-      page: 0,
+      page: '',
       pageHeight: 0,
       progress: 0
     }
   }
 
-  componentWillMount () {
+  componentDidMount () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('scroll', () => this.checkProgress())
     this.resize()
+    this.setPage(this.props)
   }
 
-  componentDidMount () {
-    this.setState({pageHeight: document.body.scrollHeight - window.innerHeight})
+  componentWillReceiveProps (nextProps) {
+    this.setPage(nextProps)
   }
 
-  changePage (page) {
+  setPage (props) {
+    const page = props.location.pathname.replace(/\//g, '')
     this.setState({
-      page: page,
+      page: page ? page.replace(/\b\w/g, l => l.toUpperCase()) : 'Home',
       pageHeight: 1000
     })
-    // this.handleMenu(false)
   }
 
   checkProgress () {
@@ -62,11 +61,12 @@ class TemplateWrapper extends React.Component {
 
   render () {
     const mobile = this.state.mobile
+    const progress = this.state.progress
     const props = this.props
     return (
-      <main>
+      <div>
         <Helmet
-          title={`Roy Eden Front End Dev -${pages[this.state.page]}-`}
+          title={`Roy Eden Frontend Dev - ${this.state.page} -`}
           meta={[
             { name: 'description', content: `Roy Eden's Portfolio Page` },
             { name: 'keywords', content: '' }
@@ -76,20 +76,18 @@ class TemplateWrapper extends React.Component {
           ]}
         />
         <Header
-          changePage={(page) => this.changePage(page)}
           handleMenu={(open) => this.handleMenu(open)}
           menuOpen={this.state.menuOpen}
           mobile={mobile}
           page={this.state.page}
           pageHeight={this.state.pageHeight}
-          pages={pages}
-          progress={this.state.progress}
+          progress={progress}
         />
-        <div className='layout'>
-          {this.props.children({...props, mobile})}
-        </div>
+        <main className='layout'>
+          {this.props.children({...props, mobile, progress})}
+        </main>
         {/* <Footer /> */}
-      </main>
+      </div>
     )
   }
 }

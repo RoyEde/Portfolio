@@ -1,23 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Link from 'gatsby-link'
 import Nav from './nav'
 import MenuButton from './menu-button'
 import icon from '../../img/icon.png'
 
-const Header = ({changePage, handleMenu, menuOpen, mobile, page, pages, pageHeight, progress}) => (
+const Header = ({handleMenu, menuOpen, mobile, page, pageHeight, progress}) => (
   <header className='header'>
     <progress
       className={`read-progress ${mobile ? 'mobile' : 'common'}`}
       max={pageHeight}
       value={progress}
     />
-    <div className={`header-bar ${mobile ? 'mobile' : 'mobile'}`}>
+    <div className={`header-bar ${mobile ? 'mobile' : 'common'}`}>
       <Link
         to='/'
       >
         <img
           className='logo'
-          onClick={() => changePage(0)}
           src={icon}
         />
       </Link>
@@ -35,10 +34,8 @@ const Header = ({changePage, handleMenu, menuOpen, mobile, page, pages, pageHeig
       {!mobile &&
         (
           <Nav
-            changePage={(page) => changePage(page)}
             mobile={mobile}
             page={page}
-            pages={pages}
           />
         )
       }
@@ -46,10 +43,8 @@ const Header = ({changePage, handleMenu, menuOpen, mobile, page, pages, pageHeig
     {mobile &&
       (
         <Nav
-          changePage={(page) => changePage(page)}
           mobile={mobile}
           page={page}
-          pages={pages}
           status={menuOpen}
         />
       )
