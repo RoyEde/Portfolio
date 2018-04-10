@@ -2,11 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 import favicon from '../img/favicon.png'
 
 import './index.css'
 import './styles.css'
+
+import styled from 'styled-components'
+
+const Container = styled.div`
+.layout {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 82vw;
+  padding-top: 4rem;
+  z-index: 1;
+}
+`
 
 class TemplateWrapper extends React.Component {
   constructor () {
@@ -15,7 +29,6 @@ class TemplateWrapper extends React.Component {
     this.state = {
       menuOpen: false,
       mobile: false,
-      page: '',
       pageHeight: 0,
       progress: 0
     }
@@ -25,19 +38,6 @@ class TemplateWrapper extends React.Component {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('scroll', () => this.checkProgress())
     this.resize()
-    this.setPage(this.props)
-  }
-
-  componentWillReceiveProps (nextProps) {
-    this.setPage(nextProps)
-  }
-
-  setPage (props) {
-    const page = props.location.pathname.replace(/\//g, '')
-    this.setState({
-      page: page ? page.replace(/\b\w/g, l => l.toUpperCase()) : 'Home',
-      pageHeight: 1000
-    })
   }
 
   checkProgress () {
@@ -45,6 +45,10 @@ class TemplateWrapper extends React.Component {
       pageHeight: document.body.scrollHeight - window.innerHeight,
       progress: window.scrollY
     })
+  }
+
+  handleMenu (open) {
+    this.setState({menuOpen: open})
   }
 
   resize () {
@@ -55,18 +59,16 @@ class TemplateWrapper extends React.Component {
     })
   }
 
-  handleMenu (open) {
-    this.setState({menuOpen: open})
-  }
-
   render () {
     const mobile = this.state.mobile
     const progress = this.state.progress
     const props = this.props
+    const location = props.location.pathname !== '/'
+      ? props.location.pathname.replace(/\//g, '').replace(/\b\w/g, l => l.toUpperCase()) : 'Home'
     return (
-      <div>
+      <Container>
         <Helmet
-          title={`Roy Eden Frontend Dev - ${this.state.page} -`}
+          title={`Roy Eden Frontend Dev - ${location} -`}
           meta={[
             { name: 'description', content: `Roy Eden's Portfolio Page` },
             { name: 'keywords', content: '' }
@@ -79,15 +81,15 @@ class TemplateWrapper extends React.Component {
           handleMenu={(open) => this.handleMenu(open)}
           menuOpen={this.state.menuOpen}
           mobile={mobile}
-          page={this.state.page}
+          page={location}
           pageHeight={this.state.pageHeight}
           progress={progress}
         />
         <main className='layout'>
           {this.props.children({...props, mobile, progress})}
         </main>
-        {/* <Footer /> */}
-      </div>
+        <Footer />
+      </Container>
     )
   }
 }

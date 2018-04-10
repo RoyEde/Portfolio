@@ -5,7 +5,7 @@ import MenuButton from './menu-button'
 import icon from '../../img/icon.png'
 
 const Header = ({handleMenu, menuOpen, mobile, page, pageHeight, progress}) => (
-  <header className='header'>
+  <header className={`${mobile && menuOpen ? ' allow-menu' : ''}`}>
     <progress
       className={`read-progress ${mobile ? 'mobile' : 'common'}`}
       max={pageHeight}
@@ -26,7 +26,6 @@ const Header = ({handleMenu, menuOpen, mobile, page, pageHeight, progress}) => (
             <MenuButton
               handleClick={() => handleMenu(!menuOpen)}
               open={menuOpen}
-              status={menuOpen}
             />
           </div>
         )

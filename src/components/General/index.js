@@ -1,44 +1,149 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const CustomLink = ({content, customClass, link}) => (
-  <a
-    className={customClass}
-    href={link}
-    rel='noopener noreferrer'
-    target='_blank'
-  >
-    {content}
-  </a>
-)
+import styled from 'styled-components'
 
-const CustomPage = ({content, customClass, page}) => (
-  <Link
-    className={customClass}
-    to={`/${page !== 'Home' ? page.toLowerCase() : ''}`}
-  >
-    {content}
-  </Link>
-)
+import { colors, screen } from '../../styles/'
 
-const Highlight = ({mobile, text, inView}) => (
-  <span
-    className={`highlight ${mobile ? 'secondary' : 'primary'}`}
-    // className={inView ? `highlight ${mobile ? 'secondary' : 'primary'}` : ''}
+const ImgContainer = styled.a`
+align-items: center;
+display: flex;
+height: auto;
+justify-content: center;
+width: auto;
+z-index: 0;
+`
+
+const HighlightContainer = styled.span`
+color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+transition: color 1.5s;
+@media screen and (min-width: ${screen.mobile}) {
+  &:hover {
+    color: ${colors.secondary};
+  }
+}
+`
+
+const IconImg = styled.img`
+border-radius: 100%;
+border-style: ${({mobile}) => mobile ? 'dashed' : 'solid'};
+border-width: ${({mobile}) => mobile ? '.3rem' : '.2rem'};
+border-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+height: 11rem;
+margin-bottom: 3rem;
+margin-top: 3rem;
+transition: border .3s, height .4s, margin.4s, width .4s;
+width: 11rem;
+@media screen and (min-width: ${screen.mobile}) {
+  &:hover {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-style: dashed;
+    border-width: .3rem;
+    height: 13rem;
+    width: 13rem;
+  }
+}
+`
+
+const LinkContainer = HighlightContainer.extend`
+border-bottom-width: .1rem;
+border-bottom-style: solid;
+border-bottom-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+font-family: inherit;
+font-size: inherit;
+transition: border 1.5s, color 1.5s;
+@media screen and (min-width: ${screen.mobile}) {
+  &:hover {
+    border-bottom-color: ${colors.secondary};
+    cursor: pointer;
+  }
+}
+`
+
+const Page = styled(Link).attrs({
+  exact: true,
+  activeClassName: 'selected'
+})`
+font-family: 'Merriweather Sans', sans-serif;
+font-size: 1.2rem;
+text-align: center;
+`
+
+const Mobile = Page.extend`
+color: ${colors.mobile};
+padding: 5vh;
+transition: background .3s, border .3s, color .4s;
+width: 100vw;
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #ccc;
+&.selected {
+  background: #dddddd88;
+  border-color: #aaa;
+  color: ${colors.secondary};
+}
+`
+
+const Common = Page.extend`
+color: ${colors.ui};
+margin-left: 1.5vw;
+margin-right: 1.5vw;
+padding-left: 1.5vw;
+padding-right: 1.5vw;
+transition: border .2s, color .4s;
+@media screen and (min-width: ${screen.mobile}) {
+  &:hover, &.selected {
+    border-bottom: .1rem solid ${colors.primary};
+    color: ${colors.primary};
+  }
+}
+`
+
+const CustomLink = ({content, link, mobile}) => (
+  <LinkContainer
+    mobile={mobile}
   >
-    {text}
-  </span>
+    <a
+      href={link}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      {content}
+    </a>
+  </LinkContainer>
 )
 
 const Icon = ({link, mobile, src}) => (
-  <CustomLink
-    content={(
-      <img className={`icon ${mobile ? 'mobile' : 'common'}`} src={src} />
-    )}
-    link={link}
+  <ImgContainer
+    href={link}
+    rel='noopener noreferrer'
+    target='_blank'
+
+  >
+    <IconImg mobile={mobile} src={src} />
+  </ImgContainer>
+)
+
+const CustomPage = ({mobile, page}) => (
+  mobile ? <Mobile to={page !== 'Home' ? `/${page}` : '/'}>
+    {page}
+  </Mobile> : <Common to={page !== 'Home' ? `/${page}` : '/'}>
+    {page}
+  </Common>
+)
+
+const Highlight = ({mobile, text}) => (
+  <HighlightContainer
     mobile={mobile}
-    styleClass='link img'
-  />
+  >
+    {text}
+  </HighlightContainer>
+)
+
+const MailForm = ({props}) => (
+  <div>
+
+  </div>
 )
 
 export { CustomLink, CustomPage, Highlight, Icon }

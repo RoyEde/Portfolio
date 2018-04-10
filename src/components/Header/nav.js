@@ -1,42 +1,52 @@
 import React from 'react'
 import { CustomPage } from '../General'
+
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const pages = ['Home', 'Projects', 'About', 'Contact']
 
-const NavLink = ({mobile, selected, where}) => (
-  <CustomPage
-    content={where}
-    customClass={`page ${mobile ? 'mobile' : 'common'} ${selected ? 'selected' : ''}`}
-    page={where}
-  />
+const Nav = styled.nav`
+height: 100%;
+
+&.common {
+  float: right;
+  height: 3rem;
+}
+
+&.mobile {
+  ${'' /* background-color: #00000066; */}
+  float: none;
+  height: auto;
+  z-index: 1;
+}
+`
+
+const NavLink = ({mobile, selected, page}) => (
+  <CustomPage mobile={mobile} page={page} />
 )
 
-const NavMenu = ({mobile, page, status}) => (
-  <menu className={`menu ${mobile ? `mobile ${status ? 'open' : ''}` : 'common'}`}>
+const NavMenu = ({mobile, status}) => (
+  <menu className={`${mobile ? `mobile${status ? ' open' : ''}` : 'common'}`}>
     {
       pages.map(name =>
         <NavLink
           key={name}
           mobile={mobile}
-          selected={page === name}
-          where={name}
+          page={name}
         />
       )
     }
   </menu>
 )
 
-const Nav = ({mobile, page, status}) => (
-  <nav
-    className={`nav ${mobile ? `mobile ${status ? 'open' : ''}` : 'common'}`}
-  >
+export default ({mobile, status}) => (
+  <Nav className={mobile ? 'mobile' : 'common'}>
     <NavMenu
       mobile={mobile}
-      page={page}
       status={status}
     />
-  </nav>
+  </Nav>
 )
 
 NavLink.propTypes = {
@@ -45,5 +55,3 @@ NavLink.propTypes = {
   selected: PropTypes.bool,
   where: PropTypes.string
 }
-
-export default Nav

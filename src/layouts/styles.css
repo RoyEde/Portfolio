@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans');
 
 a {
+  border-color: inherit;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -49,29 +51,26 @@ section {
   color: #db3069;
 }
 
-.layout {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-  max-width: 82vw;
-  padding-top: 4rem;
-  z-index: 1;
-}
-
-.header {
+header {
   display: flex;
   flex-direction: column;
+  height: 3.6rem;
   overflow: hidden;
   position: fixed;
+  transition: height 1s;
   width: 100%;
+  z-index: 3;
+}
+
+header.allow-menu {
+  height: 90vh;
 }
 
 .read-progress {
   -webkit-appearance: none;
   background-color: transparent;
   border: none;
-  height: .4rem;
+  height: .3rem;
   width: 100vw;
   z-index: 4;
 }
@@ -162,18 +161,18 @@ section {
   font-size: 1.8rem;
 }
 
-.nav.common {
+nav.common {
   float: right;
   height: 3rem;
 }
 
-.nav.mobile {
+nav.mobile {
   float: none;
   height: auto;
   z-index: 2;
 }
 
-.menu {
+menu {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -182,11 +181,11 @@ section {
   padding-left: 0;
 }
 
-.menu.common {
+menu.common {
   height: 100%;
 }
 
-.menu.mobile {
+menu.mobile {
   background-color: #fefefeef;
   flex-direction: column;
   transform: translateY(-110vh);
@@ -194,7 +193,7 @@ section {
   transition: transform .75s ease;
 }
 
-.menu.mobile.open {
+menu.mobile.open {
   height: auto;
   transform: translateY(0);
 }
@@ -248,9 +247,9 @@ section {
 .link.img {
   align-items: center;
   display: flex;
-  height: 13rem;
+  height: auto;
   justify-content: center;
-  width: 13rem;
+  width: auto;
 }
 
 .icon {
@@ -260,7 +259,6 @@ section {
   height: 11rem;
   margin-bottom: 3rem;
   margin-top: 3rem;
-  padding: auto;
   transition: border .3s, height .4s, margin.4s, width .4s;
   width: 11rem;
 }
@@ -293,12 +291,21 @@ section {
 }
 
 .skills {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   list-style-position: inside;
+  text-align: left;
 }
 
 .not-found {
   margin-top: 1rem;
   text-align: center;
+}
+
+footer {
+  background: #342e37;
+  color: #fff;
+  height: 2rem;
 }
 
 /*@media screen and (max-width: 769px) {
