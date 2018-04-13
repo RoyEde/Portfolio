@@ -53,7 +53,7 @@ font-size: inherit;
 }
 `
 
-const Description = styled.p`
+const Description = styled.div`
 font-family: 'Merriweather Sans', sans-serif;
 font-size: 1rem;
 font-style: italic;

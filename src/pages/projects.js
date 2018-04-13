@@ -27,6 +27,13 @@ export default ({...props}) => (
         <Title>
           <Highlight mobile={props.mobile} text='Projects' />
         </Title>
+        <Subtitle>
+          <Highlight mobile={props.mobile} text='Click ' />
+          on any
+          <Highlight mobile={props.mobile} text=' image ' />
+          to take you to the
+          <Highlight mobile={props.mobile} text=' project!' />
+        </Subtitle>
       </Article>
     </Section>
     <Section>

@@ -111,10 +111,8 @@ padding: 3vw;
 transition: border 1.2s, filter 1.2s;
 @media screen and (min-width: ${screen.mobile}) {
   border-color: #000;
-  height: auto;
   filter: grayscale(.7);
   padding: 2vw;
-  width: auto;
   &:hover{
     border-color: ${colors.primary};
     filter: none;
