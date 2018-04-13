@@ -5,7 +5,10 @@ import styled from 'styled-components'
 
 import { colors, screen } from '../../styles/'
 
-const ImgContainer = styled.a`
+const ImgContainer = styled.a.attrs({
+  rel: 'noopener noreferrer',
+  target: '_blank'
+})`
 align-items: center;
 display: flex;
 height: auto;
@@ -75,10 +78,9 @@ color: ${colors.mobile};
 padding: 5vh;
 transition: background .3s, border .3s, color .4s;
 width: 100vw;
-border-bottom: 1px solid #ccc;
-border-top: 1px solid #ccc;
+border-bottom: 2px solid #ccc;
 &.selected {
-  background: #dddddd88;
+  background: #dddddd77;
   border-color: #aaa;
   color: ${colors.secondary};
 }
@@ -99,10 +101,29 @@ transition: border .2s, color .4s;
 }
 `
 
-const CustomLink = ({content, link, mobile}) => (
-  <LinkContainer
-    mobile={mobile}
-  >
+const ProjectImg = styled.img`
+border: .2rem solid ${colors.secondary};
+margin-bottom: 1rem;
+margin-top: 2rem;
+max-height: 60vh;
+max-width: 70vw;
+padding: 3vw;
+transition: border 1.2s, filter 1.2s;
+@media screen and (min-width: ${screen.mobile}) {
+  border-color: #000;
+  height: auto;
+  filter: grayscale(.7);
+  padding: 2vw;
+  width: auto;
+  &:hover{
+    border-color: ${colors.primary};
+    filter: none;
+  }
+}
+`
+
+const CustomLink = ({content, link, mobile}) =>
+  <LinkContainer mobile={mobile}>
     <a
       href={link}
       rel='noopener noreferrer'
@@ -111,17 +132,17 @@ const CustomLink = ({content, link, mobile}) => (
       {content}
     </a>
   </LinkContainer>
-)
 
-const Icon = ({link, mobile, src}) => (
-  <ImgContainer
-    href={link}
-    rel='noopener noreferrer'
-    target='_blank'
-
-  >
+const Icon = ({alt, link, mobile, src}) => (
+  <ImgContainer href={link}>
     <IconImg mobile={mobile} src={src} />
   </ImgContainer>
+)
+
+const InnerLink = ({content, mobile, to}) => (
+  <LinkContainer mobile={mobile}>
+    <Link to={to}>{content}</Link>
+  </LinkContainer>
 )
 
 const CustomPage = ({mobile, page}) => (
@@ -140,10 +161,24 @@ const Highlight = ({mobile, text}) => (
   </HighlightContainer>
 )
 
+const ProjectHighlight = ({alt, link, src}) => (
+  <ImgContainer href={link}>
+    <ProjectImg alt={alt} src={src} />
+  </ImgContainer>
+)
+
 const MailForm = ({props}) => (
   <div>
 
   </div>
 )
 
-export { CustomLink, CustomPage, Highlight, Icon }
+export {
+  CustomLink,
+  CustomPage,
+  Highlight,
+  Icon,
+  ImgContainer,
+  InnerLink,
+  ProjectHighlight
+}

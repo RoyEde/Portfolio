@@ -1,27 +1,49 @@
 import React from 'react'
-import { CustomPage, Highlight } from '../components/General'
+import {
+  CustomLink,
+  Highlight,
+  InnerLink,
+  ImgContainer
+} from '../components/General'
+import {
+  Article,
+  Description,
+  Page,
+  Paragraph,
+  Section,
+  Skills,
+  SkillsItem,
+  Subtitle,
+  Title
+} from '../components/General/pages'
+
+import kittens from './../img/kittens.png'
 
 const NotFoundPage = ({...props}) => (
-  <div>
-    <section className='introduction'>
-      <h1 className='title-font'>
+  <Page>
+    <Section>
+      <Title>
         <Highlight mobile={props.mobile} text='Not found!' />
-      </h1>
-      <h2 className='subtitle-font'>
-        Sorry, but it seems like there's nothing here to be seen!
-      </h2>
-      <h2 className='subtitle-font not-found'>
-        Why not go
-        <CustomPage
-          content={(
-            <Highlight mobile={props.mobile} text=' back? ' />
-          )}
-          customClass={`custom-link ${props.mobile ? 'mobile' : 'common'}`}
-          page='Home'
-        />
-      </h2>
-    </section>
-  </div>
+      </Title>
+      <Subtitle>
+        Sorry, but it seems like there's nothing here to be seen... except for kittens:
+      </Subtitle>
+      <Article>
+        <img style={{
+          margin: '1vh',
+          width: '60vw'
+        }} src={kittens} />
+        <Subtitle>
+          Why not go
+          <InnerLink
+            content=' back?'
+            mobile={props.mobile}
+            to='/'
+          />
+        </Subtitle>
+      </Article>
+    </Section>
+  </Page>
 )
 
 export default NotFoundPage

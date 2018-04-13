@@ -1,3 +1,30 @@
 import React from 'react'
+import {
+  CustomLink,
+  Highlight,
+  InnerLink,
+  ProjectHighlight
+} from '../components/General'
+import {
+  Article,
+  Description,
+  Page,
+  Paragraph,
+  Section,
+  Skills,
+  SkillsItem,
+  Subtitle,
+  Title
+} from '../components/General/pages'
 
-export default () => <div><h1>Hi contacts</h1></div>
+export default ({...props}) => (
+  <Page>
+    <Section>
+      <Article>
+        <Title>
+          <Highlight mobile={props.mobile} text='Contact' />
+        </Title>
+      </Article>
+    </Section>
+  </Page>
+)

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+
 import favicon from '../img/favicon.png'
 
 import './index.css'
 import './styles.css'
+import { screen } from './../styles/'
 
 import styled from 'styled-components'
 
@@ -16,9 +18,12 @@ const Container = styled.div`
   justify-content: center;
   display: flex;
   margin: 0 auto;
-  max-width: 82vw;
+  max-width: 92vw;
   padding-top: 4rem;
   z-index: 1;
+  @media screen and (min-width: ${screen.mobile}) {
+    max-width: 82vw;
+  }
 }
 `
 
@@ -55,7 +60,8 @@ class TemplateWrapper extends React.Component {
     const landscape = window.innerWidth <= 768
     this.setState({
       mobile: landscape,
-      menuOpen: landscape ? this.state.menuOpen : false
+      menuOpen: landscape ? this.state.menuOpen : false,
+      pageHeight: document.body.scrollHeight - window.innerHeight
     })
   }
 
@@ -88,7 +94,7 @@ class TemplateWrapper extends React.Component {
         <main className='layout'>
           {this.props.children({...props, mobile, progress})}
         </main>
-        <Footer />
+        <Footer mobile={mobile} />
       </Container>
     )
   }

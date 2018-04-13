@@ -1,54 +1,105 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import Link from 'gatsby-link'
 import Nav from './nav'
 import MenuButton from './menu-button'
-import icon from '../../img/icon.png'
 
-const Header = ({handleMenu, menuOpen, mobile, page, pageHeight, progress}) => (
-  <header className={`${mobile && menuOpen ? ' allow-menu' : ''}`}>
-    <progress
-      className={`read-progress ${mobile ? 'mobile' : 'common'}`}
+import icon from '../../img/icon.png'
+import { animations, colors, screen } from '../../styles/'
+
+const Logo = styled.img.attrs({alt: 'Logo', src: icon})`
+height: 2.9rem;
+width: 2.9rem;
+@media screen and (min-width: ${screen.mobile}) {
+  &:hover {
+    animation: ${animations.shake} 1.4s ease infinite;
+  }
+}
+`
+
+const Progress = styled.progress`
+-webkit-appearance: none;
+background-color: transparent;
+border: none;
+height: .3rem;
+width: 100vw;
+z-index: 4;
+&::-webkit-progress-bar {
+  background-color: ${colors.background};
+}
+&::-webkit-progress-value {
+  background-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+  border-radius: 2px;
+}
+`
+
+const ButtonContainer = styled.div`
+align-items: center;
+display: flex;
+float: right;
+height: 100%;
+margin-right: 3.5vw;
+`
+
+const HeaderBar = styled.div`
+background: ${colors.background};
+box-shadow: ${({mobile}) => mobile ? '0px .05rem .3rem' : '0px .15rem .8rem'} #000000;
+display: inline-block;
+height: 3rem;
+width: 100vw;
+z-index: 3;
+`
+
+const Header = styled.header`
+display: flex;
+flex-direction: column;
+height: ${({menu}) => menu ? '90vh' : '3.6rem'};
+overflow: hidden;
+position: fixed;
+transition: height 1s;
+width: 100%;
+z-index: 3;
+`
+
+export default ({handleMenu, menuOpen, mobile, pageHeight, progress}) => (
+  <Header menu={menuOpen}>
+    <Progress
       max={pageHeight}
+      mobile={mobile}
       value={progress}
     />
-    <div className={`header-bar ${mobile ? 'mobile' : 'common'}`}>
+    <HeaderBar mobile={mobile}>
       <Link
         to='/'
       >
-        <img
-          className='logo'
-          src={icon}
-        />
+        <Logo />
       </Link>
       {mobile &&
         (
-          <div className='button-container'>
+          <ButtonContainer>
             <MenuButton
               handleClick={() => handleMenu(!menuOpen)}
               open={menuOpen}
             />
-          </div>
+          </ButtonContainer>
         )
       }
       {!mobile &&
         (
           <Nav
             mobile={mobile}
-            page={page}
           />
         )
       }
-    </div>
+    </HeaderBar>
     {mobile &&
       (
         <Nav
           mobile={mobile}
-          page={page}
           status={menuOpen}
         />
       )
     }
-  </header>
+  </Header>
 )
-
-export default Header

@@ -1,24 +1,32 @@
 import React from 'react'
-import { CustomPage } from '../General'
-
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { CustomPage } from '../General'
+import { screen } from '../../styles/'
 
 const pages = ['Home', 'Projects', 'About', 'Contact']
 
 const Nav = styled.nav`
 height: 100%;
+float: ${({mobile}) => mobile ? 'none' : 'right'};
+z-index: 1;
+`
 
-&.common {
-  float: right;
-  height: 3rem;
-}
+const Menu = styled.menu`
+align-items: center;
+display: flex;
+justify-content: center;
+margin: 0;
+padding: 0;
+height: 100%;
 
-&.mobile {
-  ${'' /* background-color: #00000066; */}
-  float: none;
+@media screen and (max-width: ${screen.mobile}) {
+  background-color: #fefefeef;
+  flex-direction: column;
   height: auto;
-  z-index: 1;
+  transform: ${({menu}) => menu ? 'translateY(0)' : 'translateY(-110vh)'};
+  transform-origin: top;
+  transition: transform .75s ease;
 }
 `
 
@@ -27,7 +35,7 @@ const NavLink = ({mobile, selected, page}) => (
 )
 
 const NavMenu = ({mobile, status}) => (
-  <menu className={`${mobile ? `mobile${status ? ' open' : ''}` : 'common'}`}>
+  <Menu menu={status}>
     {
       pages.map(name =>
         <NavLink
@@ -37,11 +45,11 @@ const NavMenu = ({mobile, status}) => (
         />
       )
     }
-  </menu>
+  </Menu>
 )
 
 export default ({mobile, status}) => (
-  <Nav className={mobile ? 'mobile' : 'common'}>
+  <Nav mobile={mobile}>
     <NavMenu
       mobile={mobile}
       status={status}

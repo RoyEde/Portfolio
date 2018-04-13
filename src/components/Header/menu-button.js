@@ -1,28 +1,8 @@
 import React from 'react'
 
-import { colors } from '../../styles/'
+import { animations, colors } from '../../styles/'
 
-import styled, {keyframes} from 'styled-components'
-
-const opened = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: rotate(-720deg);
-  }
-`
-
-const closed = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: rotate(720deg);
-  }
-`
+import styled from 'styled-components'
 
 const Button = styled.button`
 background: ${colors.background};
@@ -35,11 +15,11 @@ outline: none;
 padding: .2rem;
 width: 3rem;
 &.open {
-  animation: ${opened} .8s ease;
+  animation: ${animations.opened} .8s ease;
   font-size: 1.3rem;
 }
 &.closed {
-  animation: ${closed} .8s ease;
+  animation: ${animations.closed} .8s ease;
   font-size: 1.6rem;
 }
 `

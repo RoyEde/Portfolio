@@ -1,3 +1,40 @@
+import { keyframes } from 'styled-components'
+
+const animations = {
+  shake: keyframes`
+  10%, 70% {
+    transform: translateX(-1px) rotate(10deg);
+  }
+  20%, 80% {
+    transform: translateX(1px) rotate(-10deg);
+  }
+  30%, 50%, 90% {
+    transform: translateX(-2px) rotate(10deg);
+  }
+  40%, 60%, 99% {
+    transform: translateX(2px) rotate(-10deg);
+  }
+  `,
+  opened: keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-720deg);
+    }
+  `,
+  closed: keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: rotate(720deg);
+  }
+  `
+}
+
 const colors = {
   primary: '#db995a',
   secondary: '#db3069',
@@ -17,7 +54,7 @@ const sizing = {
 }
 
 const screen = {
-  mobile: '768px'
+  mobile: '769px'
 }
 
-export { colors, fonts, screen }
+export { animations, colors, fonts, screen }
