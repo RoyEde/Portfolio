@@ -48,7 +48,7 @@ export default ({...props}) => (
       </Article>
       <Article>
         <Paragraph>
-          I started programming in late 2015.
+          I began programming in late 2015.
         </Paragraph>
         <Paragraph>
           Today I help to coorganize
@@ -63,7 +63,7 @@ export default ({...props}) => (
             link={'https://freecodecampba.org'}
             mobile={props.mobile}
           />
-          community (which I joined in late 2016).
+          community (which I joined in 2016).
         </Paragraph>
         <Paragraph>
           <Highlight mobile={props.mobile} text=' I love that, ' />
@@ -118,8 +118,27 @@ export default ({...props}) => (
       </Subtitle>
       <Article>
         <Paragraph>
-          I've made some contributions to OpenSource
+          I've made some contributions to some
+          <Highlight mobile={props.mobile} text=' open source projects: ' />
         </Paragraph>
+        <Skills>
+          <SkillsItem>
+            <CustomLink
+              content="freeCodeCampBA's "
+              link={'https://freecodecampba.org'}
+              mobile={props.mobile}
+            />
+            new website (not up yet).
+          </SkillsItem>
+          <SkillsItem>
+            <CustomLink
+              content='Gatsby.js '
+              link={'https://gatsbyjs.org'}
+              mobile={props.mobile}
+            />
+            (documentation translation from english to spanish).
+          </SkillsItem>
+        </Skills>
       </Article>
     </Section>
     <Section>

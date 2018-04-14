@@ -32,6 +32,9 @@ font-size: inherit;
 &:first-of-type {
   margin-top: 1rem;
 }
+@media screen and (min-width: ${screen.mobile}) {
+  max-width: 55vw;
+}
 `
 
 const Section = styled.section`
