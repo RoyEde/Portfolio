@@ -7,7 +7,6 @@ import Footer from '../components/Footer'
 import favicon from '../img/favicon.png'
 
 import './index.css'
-import './styles.css'
 import { screen } from './../styles/'
 
 import styled from 'styled-components'
