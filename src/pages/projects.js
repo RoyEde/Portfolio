@@ -113,7 +113,7 @@ export default ({...props}) => (
         <Paragraph>
           <CustomLink
             content='Click here to view the code!'
-            link={''}
+            link={'https://github.com/RoyEde/Portoflio'}
             mobile={props.mobile}
           />
         </Paragraph>

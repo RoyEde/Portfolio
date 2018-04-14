@@ -39,7 +39,7 @@ export default ({...props}) => (
         <InnerLink
           content='Who?'
           mobile={props.mobile}
-          to='About'
+          to='/About'
         />
       </Title>
       <Article>
@@ -102,7 +102,7 @@ export default ({...props}) => (
           <InnerLink
             content=' Projects '
             mobile={props.mobile}
-            to='Projects'
+            to='/Projects'
           />
           .
         </Paragraph>
@@ -115,7 +115,7 @@ export default ({...props}) => (
           <InnerLink
             content=' get in touch?'
             mobile={props.mobile}
-            to='Contact'
+            to='/Contact'
           />
         </Subtitle>
       </Article>
