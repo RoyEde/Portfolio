@@ -18,7 +18,7 @@ import {
 
 import icon from '../img/icon.png'
 
-const IndexPage = ({...props}) => (
+export default ({...props}) => (
   <Page>
     <Section>
       <Title>
@@ -70,6 +70,12 @@ const IndexPage = ({...props}) => (
           />
           community meetup group here).
         </Paragraph>
+        <Paragraph>
+          Also a
+          <Highlight mobile={props.mobile} text=' musician ' />
+          and
+          <Highlight mobile={props.mobile} text=' composer.' />
+        </Paragraph>
       </Article>
     </Section>
     <Section>
@@ -103,18 +109,17 @@ const IndexPage = ({...props}) => (
       </Article>
     </Section>
     <Section>
-      <Title>
-        <InnerLink
-          content='Contact'
-          mobile={props.mobile}
-          to='Contact'
-        />
-      </Title>
       <Article>
-
+        <Subtitle>
+          Want to
+          <InnerLink
+            content=' get in touch?'
+            mobile={props.mobile}
+            to='Contact'
+          />
+        </Subtitle>
       </Article>
+      <Article />
     </Section>
   </Page>
 )
-
-export default IndexPage

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { ImgContainer } from '../General'
 
-import instagram from '../../img/instagram.png'
 import linkedin from '../../img/linkedin.png'
 import github from '../../img/github.png'
 import twitter from '../../img/twitter.png'
@@ -53,9 +52,6 @@ export default ({mobile}) => (
       </FooterImg>
       <FooterImg href='https://www.linkedin.com/in/roy-eden/'>
         <img src={linkedin} alt='linkedin' />
-      </FooterImg>
-      <FooterImg href='https://www.instagram.com/royeden_public/'>
-        <img src={instagram} alt='instagram' />
       </FooterImg>
       <FooterImg href='https://www.twitter.com/RoyEde'>
         <img src={twitter} alt='twitter' />
