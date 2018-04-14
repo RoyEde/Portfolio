@@ -39,7 +39,7 @@ align-items: center;
 display: flex;
 float: right;
 height: 100%;
-margin-right: 3.5vw;
+margin-right: 4vw;
 `
 
 const HeaderBar = styled.div`

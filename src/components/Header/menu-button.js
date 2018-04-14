@@ -12,7 +12,7 @@ color: ${colors.ui};
 font-weight: bold;
 height: 3rem;
 outline: none;
-padding-right: .5rem;
+padding: .2rem;
 width: 3rem;
 &.open {
   animation: ${animations.opened} .8s ease;
