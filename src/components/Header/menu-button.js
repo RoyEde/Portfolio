@@ -12,7 +12,7 @@ color: ${colors.ui};
 font-weight: bold;
 height: 3rem;
 outline: none;
-padding: .2rem;
+padding-right: .5rem;
 width: 3rem;
 &.open {
   animation: ${animations.opened} .8s ease;
@@ -20,7 +20,7 @@ width: 3rem;
 }
 &.closed {
   animation: ${animations.closed} .8s ease;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
 }
 `
 

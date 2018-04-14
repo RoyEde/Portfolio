@@ -82,7 +82,7 @@ transition: background .3s, border .3s, color .4s;
 width: 100vw;
 border-bottom: 2px solid #ccc;
 &.selected {
-  background: #dddddd77;
+  background: #dddddd;
   border-color: #aaa;
   color: ${colors.secondary};
 }

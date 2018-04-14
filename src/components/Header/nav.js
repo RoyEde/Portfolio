@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { CustomPage } from '../General'
-import { screen } from '../../styles/'
+import { colors, screen } from '../../styles/'
 
 const pages = ['Home', 'Projects', 'About', 'Contact']
 
@@ -21,7 +21,7 @@ padding: 0;
 height: 100%;
 
 @media screen and (max-width: ${screen.mobile}) {
-  background-color: #fefefeef;
+  background-color: ${colors.ui};
   flex-direction: column;
   height: auto;
   transform: ${({menu}) => menu ? 'translateY(0)' : 'translateY(-110vh)'};
