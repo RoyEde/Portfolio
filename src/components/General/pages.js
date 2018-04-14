@@ -19,10 +19,10 @@ margin-bottom: 1rem;
 `
 
 const Page = styled.div`
-min-height: ${() => window.innerHeight - 104}px;
+min-height: 536px;
 min-width: 40vw;
 @media screen and (min-width: ${screen.mobile}) {
-  min-height: ${() => window.innerHeight - 112}px;
+  min-height: 902px;
 }
 `
 

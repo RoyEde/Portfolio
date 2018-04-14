@@ -276,6 +276,7 @@ class MailForm extends React.Component {
         <MailLabel
           className={s.name ? 'active' : ''}
           for='Name'
+          mobile={this.props.mobile}
         >
           Name:
         </MailLabel>
@@ -288,6 +289,7 @@ class MailForm extends React.Component {
         <MailLabel
           className={s.subject ? 'active' : ''}
           for='Subject'
+          mobile={this.props.mobile}
         >
           Subject:
         </MailLabel>
@@ -300,6 +302,7 @@ class MailForm extends React.Component {
         <MailLabel
           className={s.email ? 'active' : ''}
           for='Email'
+          mobile={this.props.mobile}
         >
           E-mail:
         </MailLabel>
@@ -312,6 +315,7 @@ class MailForm extends React.Component {
         <MailLabel
           className={s.body ? 'active' : ''}
           for='Body'
+          mobile={this.props.mobile}
         >
           Mail-body:
         </MailLabel>
