@@ -19,7 +19,9 @@ width: 2.9rem;
 `
 
 const Progress = styled.progress`
+-moz-appearance: none;
 -webkit-appearance: none;
+appareance: none;
 background-color: transparent;
 border: none;
 height: .3rem;
