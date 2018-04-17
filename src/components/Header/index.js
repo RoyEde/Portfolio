@@ -27,6 +27,9 @@ border: none;
 height: .3rem;
 width: 100vw;
 z-index: 4;
+&::-moz-progress-bar {
+  background-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+}
 &::-webkit-progress-bar {
   background-color: ${colors.background};
 }
@@ -46,7 +49,7 @@ margin-right: 4vw;
 
 const HeaderBar = styled.div`
 background: ${colors.background};
-box-shadow: ${({mobile}) => mobile ? '0px .05rem .3rem' : '0px .15rem .8rem'} #000000;
+box-shadow: ${({mobile}) => mobile ? '0px .05rem .1rem' : '0px .15rem .2rem'} #000000;
 display: inline-block;
 height: 3rem;
 width: 100vw;
