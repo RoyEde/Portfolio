@@ -25,13 +25,14 @@ appareance: none;
 background-color: transparent;
 border: none;
 height: .3rem;
+position: absolute;
 width: 100vw;
 z-index: 4;
 &::-moz-progress-bar {
   background-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
 }
 &::-webkit-progress-bar {
-  background-color: ${colors.background};
+  background-color: transparent;
 }
 &::-webkit-progress-value {
   background-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
@@ -51,7 +52,8 @@ const HeaderBar = styled.div`
 background: ${colors.background};
 box-shadow: ${({mobile}) => mobile ? '0px .05rem .1rem' : '0px .15rem .2rem'} #000000;
 display: inline-block;
-height: 3rem;
+height: 3.3rem;
+padding-top: .3rem;
 width: 100vw;
 z-index: 3;
 `
@@ -101,6 +103,7 @@ export default ({handleMenu, menuOpen, mobile, pageHeight, progress}) => (
     {mobile &&
       (
         <Nav
+          handleClick={() => handleMenu(!menuOpen)}
           mobile={mobile}
           status={menuOpen}
         />

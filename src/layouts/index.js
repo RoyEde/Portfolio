@@ -17,7 +17,7 @@ const Container = styled.div`
   justify-content: center;
   display: flex;
   margin: 0 auto;
-  max-width: 92vw;
+  max-width: 85vw;
   padding-top: 4rem;
   z-index: 1;
   @media screen and (min-width: ${screen.mobile}) {
@@ -69,7 +69,8 @@ class TemplateWrapper extends React.Component {
     const progress = this.state.progress
     const props = this.props
     const location = props.location.pathname !== '/'
-      ? props.location.pathname.replace(/\//g, '').replace(/\b\w/g, l => l.toUpperCase()) : 'Home'
+      ? props.location.pathname.replace(/\/Portfolio\//g, '') : 'Home'
+
     return (
       <Container>
         <Helmet

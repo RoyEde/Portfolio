@@ -34,8 +34,8 @@ const NavLink = ({mobile, selected, page}) => (
   <CustomPage mobile={mobile} page={page} />
 )
 
-const NavMenu = ({mobile, status}) => (
-  <Menu menu={status}>
+const NavMenu = ({handleClick, mobile, status}) => (
+  <Menu onClick={mobile ? handleClick : ''} menu={status}>
     {
       pages.map(name =>
         <NavLink
@@ -48,9 +48,10 @@ const NavMenu = ({mobile, status}) => (
   </Menu>
 )
 
-export default ({mobile, status}) => (
+export default ({handleClick, mobile, status}) => (
   <Nav mobile={mobile}>
     <NavMenu
+      handleClick={handleClick}
       mobile={mobile}
       status={status}
     />

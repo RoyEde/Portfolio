@@ -48,13 +48,22 @@ export default ({mobile}) => (
     <Copryright mobile={mobile}>© Roy Eden - 2018</Copryright>
     <ContactsContainer>
       <FooterImg href='https://github.com/RoyEde'>
-        <img src={github} alt='github' />
+        <img
+          alt='github'
+          src={github}
+        />
       </FooterImg>
       <FooterImg href='https://www.linkedin.com/in/roy-eden/'>
-        <img src={linkedin} alt='linkedin' />
+        <img
+          alt='linkedin'
+          src={linkedin}
+        />
       </FooterImg>
       <FooterImg href='https://www.twitter.com/RoyEde'>
-        <img src={twitter} alt='twitter' />
+        <img
+          alt='twitter'
+          src={twitter}
+        />
       </FooterImg>
     </ContactsContainer>
   </Footer>

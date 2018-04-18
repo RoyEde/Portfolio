@@ -5,12 +5,15 @@ import { animations, colors } from '../../styles/'
 import styled from 'styled-components'
 
 const Button = styled.button`
+align-items: center;
 background: ${colors.background};
 border: none;
 border-radius: 4rem;
 color: ${colors.ui};
+display: flex;
 font-weight: bold;
 height: 3rem;
+justify-content: center;
 outline: none;
 padding: .2rem;
 width: 3rem;

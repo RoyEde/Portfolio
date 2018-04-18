@@ -163,7 +163,7 @@ flex-direction: column;
 
 const MailInput = styled.input.attrs({type: 'text'})`
 border: 2px solid #aaa;
-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+color: #888;
 font-family: sans-serif;
 font-size: 1.2rem;
 margin-bottom: 1rem;
@@ -174,13 +174,14 @@ transition: border-color 1s, color 1s, outline-color 1s;
 &:focus {
   border-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
 }
-&::placeholder {
-  color: #888;
-}
 @media screen and (min-width: ${screen.mobile}) {
   &:hover {
     border-color: ${colors.primary};
   }
+}
+&.active {
+  border-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+  color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
 }
 `
 
@@ -201,7 +202,7 @@ const MailText = styled.textarea.attrs({
   rows: 10
 })`
 border: 2px solid #aaa;
-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+color: #888;
 font-family: sans-serif;
 font-size: 1.2rem;
 margin-bottom: 1rem;
@@ -213,13 +214,14 @@ transition: border-color 1s, color 1s, outline-color 1s;
 &:focus {
   border-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
 }
-&::placeholder {
-  color: #888;
-}
 @media screen and (min-width: ${screen.mobile}) {
   &:hover {
     border-color: ${colors.primary};
   }
+}
+&.active {
+  border-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+  color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
 }
 `
 
@@ -281,6 +283,7 @@ class MailForm extends React.Component {
           Name:
         </MailLabel>
         <MailInput
+          className={s.name ? 'active' : ''}
           onChange={(event) => this.change(event)}
           mobile={this.props.mobile}
           name='Name'
@@ -294,6 +297,7 @@ class MailForm extends React.Component {
           Subject:
         </MailLabel>
         <MailInput
+          className={s.subject ? 'active' : ''}
           onChange={(event) => this.change(event)}
           mobile={this.props.mobile}
           name='Subject'
@@ -307,6 +311,7 @@ class MailForm extends React.Component {
           E-mail:
         </MailLabel>
         <MailInput
+          className={s.email ? 'active' : ''}
           onChange={(event) => this.change(event)}
           mobile={this.props.mobile}
           name='Email'
@@ -320,16 +325,17 @@ class MailForm extends React.Component {
           Mail-body:
         </MailLabel>
         <MailText
+          className={s.body ? 'active' : ''}
           onChange={(event) => this.change(event)}
           mobile={this.props.mobile}
           name='Body'
         />
         <MailSend
           className={s.active ? 'active' : 'disabled'}
-          href={
-            `mailto:Roy.Ede@gmail.com?
-            subject=${s.subject}
-            &body=${s.body.split('\n').join('%0A')}%0Afrom%20${s.email}`
+          href={s.active
+            ? `mailto:Roy.Ede@gmail.com?subject=${s.subject}&body=${
+              s.body.split('\n').join('%0A')
+            }%0Afrom%20${s.email}` : ''
           }
           mobile={this.props.mobile}
         >
