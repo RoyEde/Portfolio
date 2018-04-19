@@ -335,7 +335,7 @@ class MailForm extends React.Component {
           href={s.active
             ? `mailto:Roy.Ede@gmail.com?subject=${s.subject}&body=${
               s.body.split('\n').join('%0A')
-            }%0Afrom%20${s.email}` : ''
+            }%0Afrom%20${s.name}%20(${s.email})` : ''
           }
           mobile={this.props.mobile}
         >

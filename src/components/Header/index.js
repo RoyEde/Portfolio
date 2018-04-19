@@ -80,7 +80,7 @@ export default ({handleMenu, menuOpen, mobile, pageHeight, progress}) => (
       <Link
         to='/'
       >
-        <Logo />
+        <Logo onClick={() => handleMenu(false)} />
       </Link>
       {mobile &&
         (
@@ -103,7 +103,7 @@ export default ({handleMenu, menuOpen, mobile, pageHeight, progress}) => (
     {mobile &&
       (
         <Nav
-          handleClick={() => handleMenu(!menuOpen)}
+          handleClick={() => handleMenu(false)}
           mobile={mobile}
           status={menuOpen}
         />

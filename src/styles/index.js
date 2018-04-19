@@ -49,10 +49,6 @@ const fonts = {
   backup: 'sans-serif'
 }
 
-const sizing = {
-
-}
-
 const screen = {
   mobile: '769px'
 }

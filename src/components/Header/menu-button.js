@@ -16,14 +16,15 @@ height: 3rem;
 justify-content: center;
 outline: none;
 padding: .2rem;
+text-align: center;
 width: 3rem;
 &.open {
-  animation: ${animations.opened} .8s ease;
+  animation: ${animations.opened} 1s ease;
   font-size: 1.3rem;
 }
 &.closed {
-  animation: ${animations.closed} .8s ease;
-  font-size: 2.2rem;
+  animation: ${animations.closed} 1s ease;
+  font-size: 2rem;
 }
 `
 

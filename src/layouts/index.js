@@ -68,7 +68,7 @@ class TemplateWrapper extends React.Component {
     const mobile = this.state.mobile
     const progress = this.state.progress
     const props = this.props
-    const location = props.location.pathname !== '/'
+    const location = props.location.pathname !== '/Portfolio/'
       ? props.location.pathname.replace(/\/Portfolio\//g, '') : 'Home'
 
     return (

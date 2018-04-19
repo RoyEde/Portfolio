@@ -106,9 +106,9 @@ export default ({...props}) => (
           <InnerLink
             content=' Projects '
             mobile={props.mobile}
-            to='Projects'
+            to='/Projects'
           />
-          so you can check them out.
+          so you can check them out in action.
         </Paragraph>
       </Article>
     </Section>
@@ -139,6 +139,21 @@ export default ({...props}) => (
             (documentation translation from english to spanish).
           </SkillsItem>
         </Skills>
+      </Article>
+    </Section>
+    <Section>
+      <Subtitle>
+        <Highlight mobile={props.mobile} text='Contact:' />
+      </Subtitle>
+      <Article>
+        <Paragraph>
+          You can send me an email and get in touch with me
+          <InnerLink
+            content=' here. '
+            mobile={props.mobile}
+            to='/Contact'
+          />
+        </Paragraph>
       </Article>
     </Section>
     <Section>

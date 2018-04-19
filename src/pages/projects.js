@@ -43,14 +43,17 @@ export default ({...props}) => (
         <Highlight mobile={props.mobile} text='React.js:' />
       </Title>
       <Article>
+        <Subtitle>
+          <Highlight mobile={props.mobile} text='Personal portfolio:' />
+        </Subtitle>
         <Paragraph>
-          Personal portfolio: a
+          A
           <CustomLink
             content=' freeCodeCamp '
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
           />
-          project
+          project.
         </Paragraph>
         <ProjectImg
           alt='Portfolio'
@@ -120,14 +123,16 @@ export default ({...props}) => (
       </Article>
       <Separator />
       <Article>
+        <Subtitle>
+          <Highlight mobile={props.mobile} text='Tic-Tac-Toe:' />
+        </Subtitle>
         <Paragraph>
-          Tic-Tac-Toe:
           <CustomLink
             content=" freeCodeCamp's "
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
           />
-          Tic-Tac-Toe project
+          Tic-Tac-Toe project.
         </Paragraph>
         <ProjectHighlight
           alt='React Tic-Tac-Toe'
@@ -186,8 +191,12 @@ export default ({...props}) => (
         <Highlight mobile={props.mobile} text='React-Native:' />
       </Title>
       <Article>
+
+        <Subtitle>
+          <Highlight mobile={props.mobile} text='Tic-Tac-Toe:' />
+        </Subtitle>
         <Paragraph>
-          Tic-Tac-Toe: A  mobile port of my
+          A  mobile port of my
           <CustomLink
             content=' equivalent project made in React.js '
             link={'https://github.com/RoyEde/react_tic-tac-toe'}
