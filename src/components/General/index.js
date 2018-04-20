@@ -9,6 +9,7 @@ const HighlightContainer = styled.span`
 color: ${({active, mobile}) => active ? (mobile ? colors.secondary : colors.primary) : '#000'};
 transition: color 1.5s;
 @media screen and (min-width: ${screen.mobile}) {
+  transition: color 3s;
   &:hover {
     color: ${colors.secondary};
   }
@@ -23,6 +24,7 @@ font-family: inherit;
 font-size: inherit;
 transition: border 1.5s, color 1.5s;
 @media screen and (min-width: ${screen.mobile}) {
+  transition: border 3s, color 3s;
   &:hover {
     border-bottom-color: ${colors.secondary};
     cursor: pointer;
