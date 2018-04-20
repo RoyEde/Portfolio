@@ -116,7 +116,7 @@ export default ({...props}) => (
         <Paragraph>
           <CustomLink
             content='Click here to view the code!'
-            link={'https://github.com/RoyEde/Portoflio'}
+            link={'https://github.com/RoyEde/Portfolio'}
             mobile={props.mobile}
           />
         </Paragraph>
