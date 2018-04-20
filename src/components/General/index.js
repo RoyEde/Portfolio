@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
@@ -28,6 +28,49 @@ transition: border 1.5s, color 1.5s;
   }
 }
 `
+
+class CustomLink2 extends Component {
+  constructor (props) {
+    super(props)
+    this.spanHighlight = null
+
+    this.setSpanRef = element => {
+      this.spanHighlight = element
+    }
+
+    this.getBoundaries = () => {
+      this.setState({
+        position: this.textInput.getBoundingClientRect().top
+      })
+    }
+
+    this.state = {
+      position: 0
+    }
+  }
+
+  componentDidMount () {
+    window.addEventListener('scroll', this.getBoundaries)
+  }
+
+  render () {
+    return (
+      <LinkContainer
+        active={this.state.active}
+        mobile={this.props.mobile}
+        ref={this.setSpanRef}
+      >
+        <a
+          href={this.props.link}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          {this.props.content}
+        </a>
+      </LinkContainer>
+    )
+  }
+}
 
 const CustomLink = ({content, link, mobile}) =>
   <LinkContainer mobile={mobile}>
@@ -348,6 +391,7 @@ class MailForm extends React.Component {
 
 export {
   CustomLink,
+  CustomLink2,
   CustomPage,
   Highlight,
   Icon,

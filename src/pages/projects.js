@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   CustomLink,
+  CustomLink2,
   Highlight,
   ProjectHighlight,
   ProjectImg
@@ -114,9 +115,9 @@ export default ({...props}) => (
           </Skills>
         </Description>
         <Paragraph>
-          <CustomLink
+          <CustomLink2
             content='Click here to view the code!'
-            link={'https://github.com/RoyEde/Portoflio'}
+            link={'https://github.com/RoyEde/Portfolio'}
             mobile={props.mobile}
           />
         </Paragraph>
