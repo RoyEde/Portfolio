@@ -23,26 +23,50 @@ export default ({...props}) => (
     <Section>
       <Article>
         <Title>
-          <Highlight mobile={props.mobile} text='About' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='About'
+          />
         </Title>
       </Article>
     </Section>
     <Section>
       <Icon alt='Icon' link={'https://github.com/RoyEde'} mobile={props.mobile} src={icon} />
       <Subtitle>
-        <Highlight mobile={props.mobile} text='Bio:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Bio:'
+        />
       </Subtitle>
       <Article>
         <Paragraph>
-          <Highlight mobile={props.mobile} text='Hello!' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='Hello!'
+          />
         </Paragraph>
         <Paragraph>
           My name is
-          <Highlight mobile={props.mobile} text=' Roy Eden, ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' Roy Eden, '
+          />
           I'm an
-          <Highlight mobile={props.mobile} text=' Information Systems Engineering ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' Information Systems Engineering '
+          />
           student from
-          <Highlight mobile={props.mobile} text=' Buenos Aires, ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' Buenos Aires, '
+          />
           Argentina.
         </Paragraph>
       </Article>
@@ -56,6 +80,7 @@ export default ({...props}) => (
             content=' freeCodeCamp '
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
+            progress={props.progress}
           />
           meetups with the
           <CustomLink
@@ -66,31 +91,55 @@ export default ({...props}) => (
           community (which I joined in 2016).
         </Paragraph>
         <Paragraph>
-          <Highlight mobile={props.mobile} text=' I love that, ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' I love that, '
+          />
           because
-          <Highlight mobile={props.mobile} text=" that's where I started learning " />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=" that's where I started learning "
+          />
           most of the stuff I currently use and met some of the nicest people ever!
         </Paragraph>
         <Paragraph>
           It's also great to
-          <Highlight mobile={props.mobile} text=' give back to the community ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' give back to the community '
+          />
           because it helped me grow so much:
         </Paragraph>
         <Paragraph>
           I'm now able to
-          <Highlight mobile={props.mobile} text=' help other people starting out on their journey ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' help other people starting out on their journey '
+          />
           or learning new things every now and then!
         </Paragraph>
       </Article>
     </Section>
     <Section>
       <Subtitle>
-        <Highlight mobile={props.mobile} text='Technologies:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Technologies:'
+        />
       </Subtitle>
       <Article>
         <Paragraph>
           I've used this
-          <Highlight mobile={props.mobile} text=' technologies: ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' technologies: '
+          />
         </Paragraph>
         <Skills>
           <SkillsItem>HTML</SkillsItem>
@@ -106,6 +155,7 @@ export default ({...props}) => (
           <InnerLink
             content=' Projects '
             mobile={props.mobile}
+            progress={props.progress}
             to='/Projects'
           />
           so you can check them out in action.
@@ -114,12 +164,20 @@ export default ({...props}) => (
     </Section>
     <Section>
       <Subtitle>
-        <Highlight mobile={props.mobile} text='Contributions:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Contributions:'
+        />
       </Subtitle>
       <Article>
         <Paragraph>
           I've made some contributions to some
-          <Highlight mobile={props.mobile} text=' open source projects: ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' open source projects: '
+          />
         </Paragraph>
         <Skills>
           <SkillsItem>
@@ -127,6 +185,7 @@ export default ({...props}) => (
               content="freeCodeCampBA's "
               link={'https://freecodecampba.org'}
               mobile={props.mobile}
+              progress={props.progress}
             />
             new website (not up yet).
           </SkillsItem>
@@ -135,6 +194,7 @@ export default ({...props}) => (
               content='Gatsby.js '
               link={'https://gatsbyjs.org'}
               mobile={props.mobile}
+              progress={props.progress}
             />
             (documentation translation from english to spanish).
           </SkillsItem>
@@ -143,7 +203,11 @@ export default ({...props}) => (
     </Section>
     <Section>
       <Subtitle>
-        <Highlight mobile={props.mobile} text='Contact:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Contact:'
+        />
       </Subtitle>
       <Article>
         <Paragraph>
@@ -151,6 +215,7 @@ export default ({...props}) => (
           <InnerLink
             content=' here. '
             mobile={props.mobile}
+            progress={props.progress}
             to='/Contact'
           />
         </Paragraph>
@@ -158,17 +223,26 @@ export default ({...props}) => (
     </Section>
     <Section>
       <Subtitle>
-        <Highlight mobile={props.mobile} text='Other:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Other:'
+        />
       </Subtitle>
       <Article>
         <Paragraph>
           I'm also a
-          <Highlight mobile={props.mobile} text=' musician, ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' musician, '
+          />
           you can check some of my music
           <CustomLink
             content=' here.'
             link={'https://www.instagram.com/royeden_public/'}
             mobile={props.mobile}
+            progress={props.progress}
           />
         </Paragraph>
       </Article>

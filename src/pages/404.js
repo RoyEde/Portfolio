@@ -1,18 +1,12 @@
 import React from 'react'
 import {
-  CustomLink,
   Highlight,
-  InnerLink,
-  ImgContainer
+  InnerLink
 } from '../components/General'
 import {
   Article,
-  Description,
   Page,
-  Paragraph,
   Section,
-  Skills,
-  SkillsItem,
   Subtitle,
   Title
 } from '../components/General/pages'
@@ -23,7 +17,11 @@ const NotFoundPage = ({...props}) => (
   <Page>
     <Section>
       <Title>
-        <Highlight mobile={props.mobile} text='Not found!' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Not found!'
+        />
       </Title>
       <Subtitle>
         Sorry, but it seems like there's nothing here to be seen... except for kittens:
@@ -38,6 +36,7 @@ const NotFoundPage = ({...props}) => (
           <InnerLink
             content=' back?'
             mobile={props.mobile}
+            progress={props.progress}
             to='/'
           />
         </Subtitle>

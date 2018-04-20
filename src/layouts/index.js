@@ -66,7 +66,7 @@ class TemplateWrapper extends React.Component {
 
   render () {
     const mobile = this.state.mobile
-    const progress = this.state.progress
+    const progress = Math.round(this.state.progress + window.innerHeight)
     const props = this.props
     const location = props.location.pathname !== '/Portfolio/'
       ? props.location.pathname.replace(/\/Portfolio\//g, '') : 'Home'
@@ -89,7 +89,7 @@ class TemplateWrapper extends React.Component {
           mobile={mobile}
           page={location}
           pageHeight={this.state.pageHeight}
-          progress={progress}
+          progress={this.state.progress}
         />
         <main className='layout'>
           {this.props.children({...props, mobile, progress})}

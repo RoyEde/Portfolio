@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
 import { colors, screen } from '../../styles/'
 
 const HighlightContainer = styled.span`
-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+color: ${({active, mobile}) => active ? (mobile ? colors.secondary : colors.primary) : '#000'};
 transition: color 1.5s;
 @media screen and (min-width: ${screen.mobile}) {
   &:hover {
@@ -17,7 +18,7 @@ transition: color 1.5s;
 const LinkContainer = HighlightContainer.extend`
 border-bottom-width: .1rem;
 border-bottom-style: solid;
-border-bottom-color: ${({mobile}) => mobile ? colors.secondary : colors.primary};
+border-bottom-color: ${({active, mobile}) => active ? (mobile ? colors.secondary : colors.primary) : '#000'};
 font-family: inherit;
 font-size: inherit;
 transition: border 1.5s, color 1.5s;
@@ -29,20 +30,9 @@ transition: border 1.5s, color 1.5s;
 }
 `
 
-class CustomLink2 extends Component {
-  constructor (props) {
-    super(props)
-    this.spanHighlight = null
-
-    this.setSpanRef = element => {
-      this.spanHighlight = element
-    }
-
-    this.getBoundaries = () => {
-      this.setState({
-        position: this.textInput.getBoundingClientRect().top
-      })
-    }
+class CustomLink extends Component {
+  constructor () {
+    super()
 
     this.state = {
       position: 0
@@ -50,15 +40,16 @@ class CustomLink2 extends Component {
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.getBoundaries)
+    this.setState({
+      position: Math.floor(ReactDOM.findDOMNode(this).getBoundingClientRect().top)
+    })
   }
 
   render () {
     return (
       <LinkContainer
-        active={this.state.active}
+        active={this.props.progress > this.state.position}
         mobile={this.props.mobile}
-        ref={this.setSpanRef}
       >
         <a
           href={this.props.link}
@@ -72,28 +63,64 @@ class CustomLink2 extends Component {
   }
 }
 
-const CustomLink = ({content, link, mobile}) =>
-  <LinkContainer mobile={mobile}>
-    <a
-      href={link}
-      rel='noopener noreferrer'
-      target='_blank'
-    >
-      {content}
-    </a>
-  </LinkContainer>
+class Highlight extends Component {
+  constructor () {
+    super()
 
-const Highlight = ({mobile, text}) =>
-  <HighlightContainer
-    mobile={mobile}
-  >
-    {text}
-  </HighlightContainer>
+    this.state = {
+      position: 0
+    }
+  }
 
-const InnerLink = ({content, mobile, to}) =>
-  <LinkContainer mobile={mobile}>
-    <Link to={to}>{content}</Link>
-  </LinkContainer>
+  componentDidMount () {
+    this.setState({
+      position: Math.floor(ReactDOM.findDOMNode(this).getBoundingClientRect().top)
+    })
+  }
+
+  render () {
+    return (
+      <HighlightContainer
+        active={this.props.progress > this.state.position}
+        mobile={this.props.mobile}
+      >
+        {this.props.text}
+      </HighlightContainer>
+    )
+  }
+}
+
+class InnerLink extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      position: 0
+    }
+  }
+
+  componentDidMount () {
+    this.setState({
+      position: Math.floor(ReactDOM.findDOMNode(this).getBoundingClientRect().top)
+    })
+  }
+
+  render () {
+    return (
+      <LinkContainer
+        active={this.props.progress > this.state.position}
+        mobile={this.props.mobile}
+      >
+        <Link to={this.props.to}>{this.props.content}</Link>
+      </LinkContainer>
+    )
+  }
+}
+//
+// const InnerLink = ({content, mobile, to}) =>
+//   <LinkContainer mobile={mobile}>
+//     <Link to={to}>{content}</Link>
+//   </LinkContainer>
 
 const Page = styled(Link).attrs({
   exact: true,
@@ -391,7 +418,6 @@ class MailForm extends React.Component {
 
 export {
   CustomLink,
-  CustomLink2,
   CustomPage,
   Highlight,
   Icon,

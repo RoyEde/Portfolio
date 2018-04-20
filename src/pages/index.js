@@ -23,15 +23,27 @@ export default ({...props}) => (
     <Section>
       <Title>
         Hi
-        <Highlight mobile={props.mobile} text=' people!' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text=' people!'
+        />
       </Title>
       <Title>
         I'm
-        <Highlight mobile={props.mobile} text=' Roy,' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text=' Roy,'
+        />
       </Title>
       <Subtitle>
         Welcome to my
-        <Highlight mobile={props.mobile} text=' portfolio!' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text=' portfolio!'
+        />
       </Subtitle>
     </Section>
     <Section>
@@ -39,19 +51,32 @@ export default ({...props}) => (
         <InnerLink
           content='Who?'
           mobile={props.mobile}
+          progress={props.progress}
           to='/About'
         />
       </Title>
       <Article>
         <Icon alt='Icon' link={'https://github.com/RoyEde'} mobile={props.mobile} src={icon} />
         <Title>
-          <Highlight mobile={props.mobile} text='Roy Eden' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='Roy Eden'
+          />
         </Title>
         <Paragraph>
           An aspirant
-          <Highlight mobile={props.mobile} text=' Frontend developer ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' Frontend developer '
+          />
           from
-          <Highlight mobile={props.mobile} text=' Buenos Aires, ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' Buenos Aires, '
+          />
           Argentina.
         </Paragraph>
         <Paragraph>
@@ -60,32 +85,54 @@ export default ({...props}) => (
             content=' freeCodeCampBA '
             link={'https://freecodecampba.org'}
             mobile={props.mobile}
+            progress={props.progress}
           />
-          <Highlight mobile={props.mobile} text=' coorganizer ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' coorganizer '
+          />
           (
           <CustomLink
             content=" freeCodeCamp's "
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
+            progress={props.progress}
           />
           community meetup group here).
         </Paragraph>
         <Paragraph>
           Also a
-          <Highlight mobile={props.mobile} text=' musician ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' musician '
+          />
           and
-          <Highlight mobile={props.mobile} text=' composer.' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' composer.'
+          />
         </Paragraph>
       </Article>
     </Section>
     <Section>
       <Title>
-        <Highlight mobile={props.mobile} text='Tools' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='Tools'
+        />
       </Title>
       <Article>
         <Paragraph>
           My current
-          <Highlight mobile={props.mobile} text=' toolkit ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' toolkit '
+          />
           includes these technologies:
         </Paragraph>
         <Skills>
@@ -102,6 +149,7 @@ export default ({...props}) => (
           <InnerLink
             content=' Projects '
             mobile={props.mobile}
+            progress={props.progress}
             to='/Projects'
           />
           .
@@ -115,6 +163,7 @@ export default ({...props}) => (
           <InnerLink
             content=' get in touch?'
             mobile={props.mobile}
+            progress={props.progress}
             to='/Contact'
           />
         </Subtitle>

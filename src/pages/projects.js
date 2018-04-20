@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   CustomLink,
-  CustomLink2,
   Highlight,
   ProjectHighlight,
   ProjectImg
@@ -28,24 +27,48 @@ export default ({...props}) => (
     <Section>
       <Article>
         <Title>
-          <Highlight mobile={props.mobile} text='Projects' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='Projects'
+          />
         </Title>
         <Subtitle>
-          <Highlight mobile={props.mobile} text={`${props.mobile ? 'Tap' : 'Click'} `} />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text={`${props.mobile ? 'Tap' : 'Click'} `}
+          />
           any
-          <Highlight mobile={props.mobile} text=' image ' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' image '
+          />
           to go to the
-          <Highlight mobile={props.mobile} text=' project!' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text=' project!'
+          />
         </Subtitle>
       </Article>
     </Section>
     <Section>
       <Title>
-        <Highlight mobile={props.mobile} text='React.js:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='React.js:'
+        />
       </Title>
       <Article>
         <Subtitle>
-          <Highlight mobile={props.mobile} text='Personal portfolio:' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='Personal portfolio:'
+          />
         </Subtitle>
         <Paragraph>
           A
@@ -53,6 +76,7 @@ export default ({...props}) => (
             content=' freeCodeCamp '
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
+            progress={props.progress}
           />
           project.
         </Paragraph>
@@ -63,7 +87,11 @@ export default ({...props}) => (
         <Description>
           <Paragraph>
             Ever heard of
-            <Highlight mobile={props.mobile} text=' inception?' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' inception?'
+            />
           </Paragraph>
         </Description>
         <Description>
@@ -73,20 +101,37 @@ export default ({...props}) => (
               content=' Gatsby.js.'
               link={'https://gatsbyjs.org'}
               mobile={props.mobile}
+              progress={props.progress}
             />
           </Paragraph>
           <Paragraph>
             I bootstrapped this project with
-            <Highlight mobile={props.mobile} text=' gatsby-cli ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' gatsby-cli '
+            />
             and used
-            <Highlight mobile={props.mobile} text=' React.js ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' React.js '
+            />
             and
-            <Highlight mobile={props.mobile} text=' styled-components.' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' styled-components.'
+            />
           </Paragraph>
         </Description>
         <Description>
           <Paragraph>
-            <Highlight mobile={props.mobile} text='The challenge?' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text='The challenge?'
+            />
           </Paragraph>
           <Paragraph>
             Organizing all the info and styling the page.
@@ -94,7 +139,11 @@ export default ({...props}) => (
         </Description>
         <Description>
           <Paragraph>
-            <Highlight mobile={props.mobile} text='Used' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text='Used'
+            />
           </Paragraph>
           <Skills>
             <SkillsItem>
@@ -115,23 +164,29 @@ export default ({...props}) => (
           </Skills>
         </Description>
         <Paragraph>
-          <CustomLink2
+          <CustomLink
             content='Click here to view the code!'
             link={'https://github.com/RoyEde/Portfolio'}
             mobile={props.mobile}
+            progress={props.progress}
           />
         </Paragraph>
       </Article>
       <Separator />
       <Article>
         <Subtitle>
-          <Highlight mobile={props.mobile} text='Tic-Tac-Toe:' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='Tic-Tac-Toe:'
+          />
         </Subtitle>
         <Paragraph>
           <CustomLink
             content=" freeCodeCamp's "
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
+            progress={props.progress}
           />
           Tic-Tac-Toe project.
         </Paragraph>
@@ -143,11 +198,23 @@ export default ({...props}) => (
         <Description>
           <Paragraph>
             I bootstrapped this project with
-            <Highlight mobile={props.mobile} text=' create-react-app ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' create-react-app '
+            />
             and used
-            <Highlight mobile={props.mobile} text=' Javascript ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' Javascript '
+            />
             (logicwise) and
-            <Highlight mobile={props.mobile} text=' React.js ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' React.js '
+            />
             (structurewise).
           </Paragraph>
           <Paragraph>
@@ -156,7 +223,11 @@ export default ({...props}) => (
         </Description>
         <Description>
           <Paragraph>
-            <Highlight mobile={props.mobile} text='The challenge?' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text='The challenge?'
+            />
           </Paragraph>
           <Paragraph>
             Programming the logic and maintaining everything simple.
@@ -164,7 +235,11 @@ export default ({...props}) => (
         </Description>
         <Description>
           <Paragraph>
-            <Highlight mobile={props.mobile} text='Used' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text='Used'
+            />
           </Paragraph>
           <Skills>
             <SkillsItem>
@@ -183,18 +258,26 @@ export default ({...props}) => (
             content='Click here to view the code!'
             link={'https://github.com/RoyEde/react_tic-tac-toe'}
             mobile={props.mobile}
+            progress={props.progress}
           />
         </Paragraph>
       </Article>
     </Section>
     <Section>
       <Title>
-        <Highlight mobile={props.mobile} text='React-Native:' />
+        <Highlight
+          mobile={props.mobile}
+          progress={props.progress}
+          text='React-Native:'
+        />
       </Title>
       <Article>
-
         <Subtitle>
-          <Highlight mobile={props.mobile} text='Tic-Tac-Toe:' />
+          <Highlight
+            mobile={props.mobile}
+            progress={props.progress}
+            text='Tic-Tac-Toe:'
+          />
         </Subtitle>
         <Paragraph>
           A  mobile port of my
@@ -202,6 +285,7 @@ export default ({...props}) => (
             content=' equivalent project made in React.js '
             link={'https://github.com/RoyEde/react_tic-tac-toe'}
             mobile={props.mobile}
+            progress={props.progress}
           />
           .
         </Paragraph>
@@ -213,17 +297,33 @@ export default ({...props}) => (
         <Description>
           <Paragraph>
             I bootstrapped this project using
-            <Highlight mobile={props.mobile} text=' create-react-native-app ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' create-react-native-app '
+            />
             and used
-            <Highlight mobile={props.mobile} text=' Javascript ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' Javascript '
+            />
             (logicwise) and
-            <Highlight mobile={props.mobile} text=' React-native ' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text=' React-native '
+            />
             (structurewise).
           </Paragraph>
         </Description>
         <Description>
           <Paragraph>
-            <Highlight mobile={props.mobile} text='The challenge?' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text='The challenge?'
+            />
           </Paragraph>
           <Paragraph>
             Creating responsive styling.
@@ -231,7 +331,11 @@ export default ({...props}) => (
         </Description>
         <Description>
           <Paragraph>
-            <Highlight mobile={props.mobile} text='Used' />
+            <Highlight
+              mobile={props.mobile}
+              progress={props.progress}
+              text='Used'
+            />
           </Paragraph>
           <Skills>
             <SkillsItem>
@@ -250,6 +354,7 @@ export default ({...props}) => (
             content='Click here to view the code!'
             link={'https://github.com/RoyEde/react-native_tic-tac-toe'}
             mobile={props.mobile}
+            progress={props.progress}
           />
         </Paragraph>
       </Article>
