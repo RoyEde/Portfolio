@@ -29,26 +29,22 @@ export default ({...props}) => (
         <Title>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Projects'
           />
         </Title>
         <Subtitle>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text={`${props.mobile ? 'Tap' : 'Click'} `}
           />
           any
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' image '
           />
           to go to the
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' project!'
           />
         </Subtitle>
@@ -58,7 +54,6 @@ export default ({...props}) => (
       <Title>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='React.js:'
         />
       </Title>
@@ -66,7 +61,6 @@ export default ({...props}) => (
         <Subtitle>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Personal portfolio:'
           />
         </Subtitle>
@@ -76,7 +70,6 @@ export default ({...props}) => (
             content=' freeCodeCamp '
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
-            progress={props.progress}
           />
           project.
         </Paragraph>
@@ -89,7 +82,6 @@ export default ({...props}) => (
             Ever heard of
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' inception?'
             />
           </Paragraph>
@@ -101,26 +93,22 @@ export default ({...props}) => (
               content=' Gatsby.js.'
               link={'https://gatsbyjs.org'}
               mobile={props.mobile}
-              progress={props.progress}
             />
           </Paragraph>
           <Paragraph>
             I bootstrapped this project with
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' gatsby-cli '
             />
             and used
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' React.js '
             />
             and
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' styled-components.'
             />
           </Paragraph>
@@ -129,7 +117,6 @@ export default ({...props}) => (
           <Paragraph>
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text='The challenge?'
             />
           </Paragraph>
@@ -141,7 +128,6 @@ export default ({...props}) => (
           <Paragraph>
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text='Used'
             />
           </Paragraph>
@@ -168,7 +154,6 @@ export default ({...props}) => (
             content='Click here to view the code!'
             link={'https://github.com/RoyEde/Portfolio'}
             mobile={props.mobile}
-            progress={props.progress}
           />
         </Paragraph>
       </Article>
@@ -177,7 +162,6 @@ export default ({...props}) => (
         <Subtitle>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Tic-Tac-Toe:'
           />
         </Subtitle>
@@ -186,7 +170,6 @@ export default ({...props}) => (
             content=" freeCodeCamp's "
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
-            progress={props.progress}
           />
           Tic-Tac-Toe project.
         </Paragraph>
@@ -200,19 +183,16 @@ export default ({...props}) => (
             I bootstrapped this project with
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' create-react-app '
             />
             and used
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' Javascript '
             />
             (logicwise) and
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' React.js '
             />
             (structurewise).
@@ -225,7 +205,6 @@ export default ({...props}) => (
           <Paragraph>
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text='The challenge?'
             />
           </Paragraph>
@@ -237,7 +216,6 @@ export default ({...props}) => (
           <Paragraph>
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text='Used'
             />
           </Paragraph>
@@ -258,7 +236,6 @@ export default ({...props}) => (
             content='Click here to view the code!'
             link={'https://github.com/RoyEde/react_tic-tac-toe'}
             mobile={props.mobile}
-            progress={props.progress}
           />
         </Paragraph>
       </Article>
@@ -267,7 +244,6 @@ export default ({...props}) => (
       <Title>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='React-Native:'
         />
       </Title>
@@ -275,7 +251,6 @@ export default ({...props}) => (
         <Subtitle>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Tic-Tac-Toe:'
           />
         </Subtitle>
@@ -285,7 +260,6 @@ export default ({...props}) => (
             content=' equivalent project made in React.js '
             link={'https://github.com/RoyEde/react_tic-tac-toe'}
             mobile={props.mobile}
-            progress={props.progress}
           />
           .
         </Paragraph>
@@ -299,19 +273,16 @@ export default ({...props}) => (
             I bootstrapped this project using
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' create-react-native-app '
             />
             and used
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' Javascript '
             />
             (logicwise) and
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text=' React-native '
             />
             (structurewise).
@@ -321,7 +292,6 @@ export default ({...props}) => (
           <Paragraph>
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text='The challenge?'
             />
           </Paragraph>
@@ -333,7 +303,6 @@ export default ({...props}) => (
           <Paragraph>
             <Highlight
               mobile={props.mobile}
-              progress={props.progress}
               text='Used'
             />
           </Paragraph>
@@ -354,7 +323,6 @@ export default ({...props}) => (
             content='Click here to view the code!'
             link={'https://github.com/RoyEde/react-native_tic-tac-toe'}
             mobile={props.mobile}
-            progress={props.progress}
           />
         </Paragraph>
       </Article>

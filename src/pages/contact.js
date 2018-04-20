@@ -18,7 +18,6 @@ export default ({...props}) => (
         <Title>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Contact'
           />
         </Title>
@@ -29,7 +28,6 @@ export default ({...props}) => (
         <Subtitle>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Get in touch with me!'
           />
         </Subtitle>

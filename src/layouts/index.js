@@ -26,8 +26,6 @@ const Container = styled.div`
 }
 `
 
-let WindowHeight = 0
-
 class TemplateWrapper extends React.Component {
   constructor () {
     super()
@@ -41,7 +39,6 @@ class TemplateWrapper extends React.Component {
   }
 
   componentDidMount () {
-    WindowHeight = window.innerHeight
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('scroll', () => this.checkProgress())
     this.resize()
@@ -69,7 +66,6 @@ class TemplateWrapper extends React.Component {
 
   render () {
     const mobile = this.state.mobile
-    const progress = Math.round(this.state.progress + WindowHeight)
     const props = this.props
     const location = props.location.pathname !== '/Portfolio/'
       ? props.location.pathname.replace(/\/Portfolio\//g, '') : 'Home'
@@ -95,7 +91,7 @@ class TemplateWrapper extends React.Component {
           progress={this.state.progress}
         />
         <main className='layout'>
-          {this.props.children({...props, mobile, progress})}
+          {this.props.children({...props, mobile})}
         </main>
         <Footer mobile={mobile} />
       </Container>

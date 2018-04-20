@@ -25,7 +25,6 @@ export default ({...props}) => (
         Hi
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text=' people!'
         />
       </Title>
@@ -33,7 +32,6 @@ export default ({...props}) => (
         I'm
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text=' Roy,'
         />
       </Title>
@@ -41,7 +39,6 @@ export default ({...props}) => (
         Welcome to my
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text=' portfolio!'
         />
       </Subtitle>
@@ -51,7 +48,6 @@ export default ({...props}) => (
         <InnerLink
           content='Who?'
           mobile={props.mobile}
-          progress={props.progress}
           to='/About'
         />
       </Title>
@@ -60,7 +56,6 @@ export default ({...props}) => (
         <Title>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Roy Eden'
           />
         </Title>
@@ -68,13 +63,11 @@ export default ({...props}) => (
           An aspirant
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' Frontend developer '
           />
           from
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' Buenos Aires, '
           />
           Argentina.
@@ -85,11 +78,9 @@ export default ({...props}) => (
             content=' freeCodeCampBA '
             link={'https://freecodecampba.org'}
             mobile={props.mobile}
-            progress={props.progress}
           />
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' coorganizer '
           />
           (
@@ -97,7 +88,6 @@ export default ({...props}) => (
             content=" freeCodeCamp's "
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
-            progress={props.progress}
           />
           community meetup group here).
         </Paragraph>
@@ -105,13 +95,11 @@ export default ({...props}) => (
           Also a
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' musician '
           />
           and
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' composer.'
           />
         </Paragraph>
@@ -121,7 +109,6 @@ export default ({...props}) => (
       <Title>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Tools'
         />
       </Title>
@@ -130,7 +117,6 @@ export default ({...props}) => (
           My current
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' toolkit '
           />
           includes these technologies:
@@ -149,7 +135,6 @@ export default ({...props}) => (
           <InnerLink
             content=' Projects '
             mobile={props.mobile}
-            progress={props.progress}
             to='/Projects'
           />
           .
@@ -163,7 +148,6 @@ export default ({...props}) => (
           <InnerLink
             content=' get in touch?'
             mobile={props.mobile}
-            progress={props.progress}
             to='/Contact'
           />
         </Subtitle>

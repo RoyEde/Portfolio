@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import VisibilitySensor from 'react-visibility-sensor'
 
 import { colors, screen } from '../../styles/'
 
@@ -9,7 +9,6 @@ const HighlightContainer = styled.span`
 color: ${({active, mobile}) => active ? (mobile ? colors.secondary : colors.primary) : '#000'};
 transition: color 1.5s;
 @media screen and (min-width: ${screen.mobile}) {
-  transition: color 3s;
   &:hover {
     color: ${colors.secondary};
   }
@@ -24,7 +23,6 @@ font-family: inherit;
 font-size: inherit;
 transition: border 1.5s, color 1.5s;
 @media screen and (min-width: ${screen.mobile}) {
-  transition: border 3s, color 3s;
   &:hover {
     border-bottom-color: ${colors.secondary};
     cursor: pointer;
@@ -32,97 +30,53 @@ transition: border 1.5s, color 1.5s;
 }
 `
 
-class CustomLink extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      position: 0
-    }
-  }
-
-  componentDidMount () {
-    this.setState({
-      position: Math.floor(ReactDOM.findDOMNode(this).getBoundingClientRect().top)
-    })
-  }
-
-  render () {
-    return (
-      <LinkContainer
-        active={this.props.progress > this.state.position}
-        mobile={this.props.mobile}
-      >
-        <a
-          href={this.props.link}
-          rel='noopener noreferrer'
-          target='_blank'
+const CustomLink = ({content, link, mobile}) =>
+  <VisibilitySensor>
+    {({isVisible}) =>
+      (
+        <LinkContainer
+          active={isVisible}
+          mobile={mobile}
         >
-          {this.props.content}
-        </a>
-      </LinkContainer>
-    )
-  }
-}
-
-class Highlight extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      position: 0
+          <a
+            href={link}
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {content}
+          </a>
+        </LinkContainer>
+      )
     }
-  }
+  </VisibilitySensor>
 
-  componentDidMount () {
-    this.setState({
-      position: Math.floor(ReactDOM.findDOMNode(this).getBoundingClientRect().top)
-    })
-  }
-
-  render () {
-    return (
-      <HighlightContainer
-        active={this.props.progress > this.state.position}
-        mobile={this.props.mobile}
-      >
-        {this.props.text}
-      </HighlightContainer>
-    )
-  }
-}
-
-class InnerLink extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      position: 0
+const Highlight = ({mobile, text}) =>
+  <VisibilitySensor>
+    {({isVisible}) =>
+      (
+        <HighlightContainer
+          active={isVisible}
+          mobile={mobile}
+        >
+          {text}
+        </HighlightContainer>
+      )
     }
-  }
+  </VisibilitySensor>
 
-  componentDidMount () {
-    this.setState({
-      position: Math.floor(ReactDOM.findDOMNode(this).getBoundingClientRect().top)
-    })
-  }
-
-  render () {
-    return (
-      <LinkContainer
-        active={this.props.progress > this.state.position}
-        mobile={this.props.mobile}
-      >
-        <Link to={this.props.to}>{this.props.content}</Link>
-      </LinkContainer>
-    )
-  }
-}
-//
-// const InnerLink = ({content, mobile, to}) =>
-//   <LinkContainer mobile={mobile}>
-//     <Link to={to}>{content}</Link>
-//   </LinkContainer>
+const InnerLink = ({content, mobile, to}) =>
+  <VisibilitySensor>
+    {({isVisible}) =>
+      (
+        <LinkContainer
+          active={isVisible}
+          mobile={mobile}
+        >
+          <Link to={to}>{content}</Link>
+        </LinkContainer>
+      )
+    }
+  </VisibilitySensor>
 
 const Page = styled(Link).attrs({
   exact: true,

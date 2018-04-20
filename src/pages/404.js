@@ -19,7 +19,6 @@ const NotFoundPage = ({...props}) => (
       <Title>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Not found!'
         />
       </Title>
@@ -36,7 +35,6 @@ const NotFoundPage = ({...props}) => (
           <InnerLink
             content=' back?'
             mobile={props.mobile}
-            progress={props.progress}
             to='/'
           />
         </Subtitle>

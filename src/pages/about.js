@@ -25,7 +25,6 @@ export default ({...props}) => (
         <Title>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='About'
           />
         </Title>
@@ -36,7 +35,6 @@ export default ({...props}) => (
       <Subtitle>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Bio:'
         />
       </Subtitle>
@@ -44,7 +42,6 @@ export default ({...props}) => (
         <Paragraph>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text='Hello!'
           />
         </Paragraph>
@@ -52,19 +49,16 @@ export default ({...props}) => (
           My name is
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' Roy Eden, '
           />
           I'm an
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' Information Systems Engineering '
           />
           student from
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' Buenos Aires, '
           />
           Argentina.
@@ -80,7 +74,6 @@ export default ({...props}) => (
             content=' freeCodeCamp '
             link={'https://freecodecamp.org'}
             mobile={props.mobile}
-            progress={props.progress}
           />
           meetups with the
           <CustomLink
@@ -93,13 +86,11 @@ export default ({...props}) => (
         <Paragraph>
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' I love that, '
           />
           because
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=" that's where I started learning "
           />
           most of the stuff I currently use and met some of the nicest people ever!
@@ -108,7 +99,6 @@ export default ({...props}) => (
           It's also great to
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' give back to the community '
           />
           because it helped me grow so much:
@@ -117,7 +107,6 @@ export default ({...props}) => (
           I'm now able to
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' help other people starting out on their journey '
           />
           or learning new things every now and then!
@@ -128,7 +117,6 @@ export default ({...props}) => (
       <Subtitle>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Technologies:'
         />
       </Subtitle>
@@ -137,7 +125,6 @@ export default ({...props}) => (
           I've used this
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' technologies: '
           />
         </Paragraph>
@@ -155,7 +142,6 @@ export default ({...props}) => (
           <InnerLink
             content=' Projects '
             mobile={props.mobile}
-            progress={props.progress}
             to='/Projects'
           />
           so you can check them out in action.
@@ -166,7 +152,6 @@ export default ({...props}) => (
       <Subtitle>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Contributions:'
         />
       </Subtitle>
@@ -175,7 +160,6 @@ export default ({...props}) => (
           I've made some contributions to some
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' open source projects: '
           />
         </Paragraph>
@@ -185,7 +169,6 @@ export default ({...props}) => (
               content="freeCodeCampBA's "
               link={'https://freecodecampba.org'}
               mobile={props.mobile}
-              progress={props.progress}
             />
             new website (not up yet).
           </SkillsItem>
@@ -194,7 +177,6 @@ export default ({...props}) => (
               content='Gatsby.js '
               link={'https://gatsbyjs.org'}
               mobile={props.mobile}
-              progress={props.progress}
             />
             (documentation translation from english to spanish).
           </SkillsItem>
@@ -205,7 +187,6 @@ export default ({...props}) => (
       <Subtitle>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Contact:'
         />
       </Subtitle>
@@ -215,7 +196,6 @@ export default ({...props}) => (
           <InnerLink
             content=' here. '
             mobile={props.mobile}
-            progress={props.progress}
             to='/Contact'
           />
         </Paragraph>
@@ -225,7 +205,6 @@ export default ({...props}) => (
       <Subtitle>
         <Highlight
           mobile={props.mobile}
-          progress={props.progress}
           text='Other:'
         />
       </Subtitle>
@@ -234,7 +213,6 @@ export default ({...props}) => (
           I'm also a
           <Highlight
             mobile={props.mobile}
-            progress={props.progress}
             text=' musician, '
           />
           you can check some of my music
@@ -242,7 +220,6 @@ export default ({...props}) => (
             content=' here.'
             link={'https://www.instagram.com/royeden_public/'}
             mobile={props.mobile}
-            progress={props.progress}
           />
         </Paragraph>
       </Article>
