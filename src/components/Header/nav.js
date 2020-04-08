@@ -12,7 +12,7 @@ float: ${({mobile}) => mobile ? 'none' : 'right'};
 z-index: 1;
 `
 
-const Menu = styled.menu`
+const Menu = styled.div`
 align-items: center;
 display: flex;
 justify-content: center;
@@ -24,9 +24,9 @@ height: 100%;
   background-color: ${colors.ui};
   flex-direction: column;
   height: auto;
-  transform: ${({menu}) => menu ? 'translateY(0)' : 'translateY(-110vh)'};
-  transform-origin: top;
-  transition: transform .75s ease;
+  transform: ${({menu}) => menu ? 'scaleY(1)' : 'scaleY(0)'};
+  transform-origin: center top;
+  transition: transform .3s;
 }
 `
 

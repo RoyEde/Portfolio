@@ -275,16 +275,12 @@ transition: border-color 1s, color 1s;
 `
 
 class MailForm extends React.Component {
-  constructor () {
-    super()
-
-    this.state = {
+  state = {
       active: false,
       body: '',
       email: '',
       name: '',
       subject: ''
-    }
   }
 
   change (event) {
